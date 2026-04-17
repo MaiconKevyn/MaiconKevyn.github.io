@@ -67,20 +67,20 @@ const projects = [
     tags: ["LangGraph", "OpenAI", "DuckDB", "Healthcare", "Evaluation"]
   },
   {
-    title: "QA on AWS",
-    kicker: "Cloud RAG",
+    title: "AWS Universal Extractor",
+    kicker: "Document Intelligence",
     tone: "purple",
-    signal: "4 stages",
-    signalLabel: "serverless pipeline",
-    repo: "https://github.com/MaiconKevyn/qa-on-aws",
+    signal: "Async AWS",
+    signalLabel: "structured extraction",
+    repo: "https://github.com/MaiconKevyn/aws-universal-extractor",
     summary:
-      "Serverless PDF pipeline with Flask, S3, Lambda, Step Functions, Bedrock embeddings, and OpenSearch for document processing and retrieval.",
+      "Asynchronous AWS pipeline for structured PDF extraction using Step Functions, Lambda, S3, YAML extraction profiles, and OpenAI structured outputs.",
     bullets: [
-      "Automates ingestion from upload through extraction, embeddings and indexing.",
-      "Combines application code with cloud orchestration and observability.",
-      "Extends the portfolio beyond notebook-centric workflows."
+      "Starts from an async HTTP submission flow and persists extraction outputs by profile, version, and request id.",
+      "Separates fetch, text extraction, profile loading, LLM extraction, schema validation, and persistence into explicit pipeline steps.",
+      "Shows cloud-native AI workflow design beyond local prototypes and notebook analysis."
     ],
-    tags: ["AWS", "Step Functions", "Bedrock", "OpenSearch", "RAG"]
+    tags: ["AWS", "Step Functions", "Lambda", "S3", "Structured Outputs"]
   },
   {
     title: "Research Agent with Continuous Evaluation",
@@ -99,52 +99,20 @@ const projects = [
     tags: ["FastAPI", "React", "pgvector", "LangGraph", "Guardrails"]
   },
   {
-    title: "Cyber AI Assessment",
-    kicker: "Data Product",
-    tone: "cyan",
-    signal: "UI + AI",
-    signalLabel: "operational workflow",
-    repo: "https://github.com/MaiconKevyn/cyber_AI_assessment",
-    summary:
-      "Dashboard-oriented system connecting assets, device vulnerabilities, operational workflows, and an AI chat assistant inside one product surface.",
-    bullets: [
-      "Shows practical integration of AI with dashboards, APIs and relational data.",
-      "Adds product sensibility to the portfolio rather than model-only demos.",
-      "Useful evidence for roles that require full-stack technical judgment."
-    ],
-    tags: ["Dashboard", "FastAPI", "PostgreSQL", "AI Assistant", "Product"]
-  },
-  {
-    title: "SQL Agent with Llama 3",
+    title: "Amazon Feedback Analysis",
     kicker: "Applied NLP",
-    tone: "purple",
-    signal: "PT-BR",
-    signalLabel: "domain querying",
-    repo: "https://github.com/MaiconKevyn/sql-agent-llama3",
-    summary:
-      "Interactive SQL agent in Brazilian Portuguese for querying SUS data using natural language and fallback-oriented conversational logic.",
-    bullets: [
-      "Highlights domain-specific NLP beyond generic chatbot demos.",
-      "Acts as an earlier iteration in the healthcare-agent line of work.",
-      "Useful for showing progressive refinement across related systems."
-    ],
-    tags: ["Llama 3", "Ollama", "SQL", "Healthcare", "Portuguese NLP"]
-  },
-  {
-    title: "chatbot-pysus",
-    kicker: "Exploration Layer",
     tone: "green",
-    signal: "LangChain",
-    signalLabel: "prototype signal",
-    repo: "https://github.com/MaiconKevyn/chatbot-pysus",
+    signal: "Zero-shot",
+    signalLabel: "sentiment + topics",
+    repo: "https://github.com/MaiconKevyn/amazon-feedback-analysis",
     summary:
-      "Early healthcare chatbot exploring natural-language access to SUS data, including experimentation around sanitization, fallback logic and vector search.",
+      "Customer-review analysis workflow over an Amazon reviews dataset, combining zero-shot sentiment classification, topic modeling, and a Streamlit dashboard for insight exploration.",
     bullets: [
-      "Makes the portfolio's experimentation path more visible.",
-      "Helps tell a coherent story from prototype to more rigorous healthcare agents.",
-      "Adds evidence of iterative learning rather than one-off builds."
+      "Uses GPT-4o for sentiment analysis and DeBERTa zero-shot classification for topic detection.",
+      "Groups feedback by topic to identify which issues most negatively affect user experience.",
+      "Presents results through interactive visual analysis, including trends over time and sentiment by topic."
     ],
-    tags: ["LangChain", "Healthcare", "Chatbot", "Experimentation", "PT-BR"]
+    tags: ["GPT-4o", "DeBERTa", "Streamlit", "Pandas", "Zero-shot NLP"]
   }
 ];
 
