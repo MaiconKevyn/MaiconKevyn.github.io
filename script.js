@@ -1,112 +1,280 @@
+const timelineEntries = [
+  {
+    title: "Healthcare AI Systems",
+    label: "Agentic NL2SQL",
+    color: "#06b6d4",
+    summary:
+      "Built healthcare-focused AI workflows around Brazilian SUS data, with stateful orchestration, SQL generation, validation, and self-repair loops.",
+    bullets: [
+      "Portuguese natural-language to SQL agent over roughly 37 million hospital records and 16 tables.",
+      "Reported 96.3% execution accuracy in controlled evaluation for the LangGraph-based TXT2SQL system.",
+      "Combined schema routing, SQL validation, retry logic, CLI, API, and web interfaces in one delivery path."
+    ]
+  },
+  {
+    title: "Cloud RAG Delivery",
+    label: "AWS + Serverless",
+    color: "#a855f7",
+    summary:
+      "Expanded from local AI workflows into cloud-native document systems using AWS services, event-driven orchestration, and searchable indexing.",
+    bullets: [
+      "Designed a serverless PDF processing pipeline with Flask, S3, Lambda, Step Functions, Bedrock embeddings, and OpenSearch.",
+      "Used staged document lineage to keep each processing step inspectable and reproducible.",
+      "Strengthened the portfolio signal for infrastructure-minded AI engineering."
+    ]
+  },
+  {
+    title: "Evaluation-First Agents",
+    label: "Research Systems",
+    color: "#4ade80",
+    summary:
+      "Pushed into more explicit AI architecture work with typed contracts, guardrails, vector search, web search, and execution traces.",
+    bullets: [
+      "Built a research agent with FastAPI, React, LangGraph, PostgreSQL, and pgvector.",
+      "Used structured outputs and schema validation for critical decision points instead of prompt-only control.",
+      "Focused on grounded answers, source handling, and measurable behavior across iterations."
+    ]
+  },
+  {
+    title: "Operational AI Products",
+    label: "UI + API + Data",
+    color: "#fb923c",
+    summary:
+      "Applied AI features inside broader products, including dashboards and domain workflows where models must coexist with operational constraints.",
+    bullets: [
+      "Integrated AI-assisted capabilities into dashboard-style applications instead of keeping them as isolated experiments.",
+      "Worked across frontend surfaces, backend services, databases, and AI layers to keep systems usable.",
+      "Kept the portfolio balanced between LLM systems, analytics, and product-oriented engineering."
+    ]
+  }
+];
+
 const projects = [
   {
     title: "TXT2SQL for DATASUS",
-    track: "Agents",
-    tone: "teal",
+    kicker: "Healthcare AI",
+    tone: "cyan",
+    signal: "37M+",
+    signalLabel: "records queried",
     repo: "https://github.com/MaiconKevyn/agent-txt2sql-langgraph",
     summary:
-      "Portuguese natural-language to SQL agent for Brazilian healthcare microdata, built with LangGraph and OpenAI over a DuckDB warehouse.",
-    highlights: [
-      "Works over approximately 37 million hospital records across 16 tables.",
-      "Reported 96.3% execution accuracy on an 81-query evaluation set.",
-      "Includes routing, SQL validation, bounded self-repair, CLI, REST API, and web UI."
+      "Portuguese natural-language to SQL agent over Brazilian healthcare microdata, built with LangGraph, OpenAI, DuckDB, validation rules, and repair loops.",
+    bullets: [
+      "Routes queries across conversational, schema and database paths.",
+      "Validates SQL before execution and repairs failures with bounded retries.",
+      "Shows strong evidence of evaluation, domain adaptation, and system design."
     ],
     tags: ["LangGraph", "OpenAI", "DuckDB", "Healthcare", "Evaluation"]
   },
   {
     title: "QA on AWS",
-    track: "Cloud AI",
-    tone: "rust",
+    kicker: "Cloud RAG",
+    tone: "purple",
+    signal: "4 stages",
+    signalLabel: "serverless pipeline",
     repo: "https://github.com/MaiconKevyn/qa-on-aws",
     summary:
-      "Serverless RAG pipeline for PDF processing using Flask, AWS Step Functions, Lambda, Bedrock embeddings, S3 lineage, and OpenSearch indexing.",
-    highlights: [
-      "Automates document ingestion from upload to vector indexing.",
-      "Uses Step Functions to orchestrate a four-stage RAG pipeline.",
-      "Combines application delivery with cloud infrastructure and observability."
+      "Serverless PDF pipeline with Flask, S3, Lambda, Step Functions, Bedrock embeddings, and OpenSearch for document processing and retrieval.",
+    bullets: [
+      "Automates ingestion from upload through extraction, embeddings and indexing.",
+      "Combines application code with cloud orchestration and observability.",
+      "Extends the portfolio beyond notebook-centric workflows."
     ],
-    tags: ["AWS", "RAG", "Serverless", "Bedrock", "OpenSearch"]
+    tags: ["AWS", "Step Functions", "Bedrock", "OpenSearch", "RAG"]
   },
   {
     title: "Research Agent with Continuous Evaluation",
-    track: "Agents",
-    tone: "gold",
+    kicker: "Agentic Research",
+    tone: "green",
+    signal: "pgvector",
+    signalLabel: "grounded retrieval",
     repo: "https://github.com/MaiconKevyn/agentic-research-pipeline",
     summary:
-      "Research agent project focused on explicit orchestration, tool calling, structured validation, vector search, web search, and evaluation-first design.",
-    highlights: [
-      "Built with FastAPI, React, LangGraph, PostgreSQL, and pgvector.",
-      "Uses typed schemas and structured output for critical workflow stages.",
-      "Combines answer synthesis, source grounding, and execution traces."
+      "Evaluation-minded research agent with FastAPI, React, LangGraph, PostgreSQL, pgvector, structured outputs, and tool-based evidence gathering.",
+    bullets: [
+      "Uses schemas for classification, planning, synthesis and evaluation stages.",
+      "Combines vector search, web search and execution trace reporting.",
+      "Represents a more mature AI systems direction with explicit contracts."
     ],
     tags: ["FastAPI", "React", "pgvector", "LangGraph", "Guardrails"]
   },
   {
     title: "Cyber AI Assessment",
-    track: "Data Product",
-    tone: "teal",
+    kicker: "Data Product",
+    tone: "cyan",
+    signal: "UI + AI",
+    signalLabel: "operational workflow",
     repo: "https://github.com/MaiconKevyn/cyber_AI_assessment",
     summary:
-      "AI-enabled dashboard for energy assets, device vulnerabilities, and operational workflows with a chat assistant and multi-service architecture.",
-    highlights: [
-      "Connects dashboard UX, FastAPI chat services, and PostgreSQL data.",
-      "Demonstrates product thinking beyond standalone models.",
-      "Shows practical integration of AI features inside an operational interface."
+      "Dashboard-oriented system connecting assets, device vulnerabilities, operational workflows, and an AI chat assistant inside one product surface.",
+    bullets: [
+      "Shows practical integration of AI with dashboards, APIs and relational data.",
+      "Adds product sensibility to the portfolio rather than model-only demos.",
+      "Useful evidence for roles that require full-stack technical judgment."
     ],
-    tags: ["Next.js", "FastAPI", "PostgreSQL", "AI Assistant", "Dashboard"]
+    tags: ["Dashboard", "FastAPI", "PostgreSQL", "AI Assistant", "Product"]
   },
   {
     title: "SQL Agent with Llama 3",
-    track: "Applied NLP",
-    tone: "rust",
+    kicker: "Applied NLP",
+    tone: "purple",
+    signal: "PT-BR",
+    signalLabel: "domain querying",
     repo: "https://github.com/MaiconKevyn/sql-agent-llama3",
     summary:
-      "Interactive SQL agent in Brazilian Portuguese for querying SUS data through natural-language questions, with modular design and fallback strategies.",
-    highlights: [
-      "Targets domain-specific health analytics without requiring SQL expertise.",
-      "Focuses on conversational querying in Portuguese.",
-      "Represents an earlier iteration of the healthcare agent line of work."
+      "Interactive SQL agent in Brazilian Portuguese for querying SUS data using natural language and fallback-oriented conversational logic.",
+    bullets: [
+      "Highlights domain-specific NLP beyond generic chatbot demos.",
+      "Acts as an earlier iteration in the healthcare-agent line of work.",
+      "Useful for showing progressive refinement across related systems."
     ],
-    tags: ["Ollama", "Llama 3", "SQL", "Portuguese NLP", "Healthcare"]
+    tags: ["Llama 3", "Ollama", "SQL", "Healthcare", "Portuguese NLP"]
   },
   {
     title: "chatbot-pysus",
-    track: "Applied NLP",
-    tone: "gold",
+    kicker: "Exploration Layer",
+    tone: "green",
+    signal: "LangChain",
+    signalLabel: "prototype signal",
     repo: "https://github.com/MaiconKevyn/chatbot-pysus",
     summary:
-      "Early healthcare chatbot for querying SUS data with natural language, positioned as a practical experimentation layer around tool calling and data access.",
-    highlights: [
-      "Explores question answering over public healthcare data in Portuguese.",
-      "Shows iterative work on sanitization, fallback logic, buffering, and vector search.",
-      "Helps tell the story of how the later TXT2SQL systems evolved."
+      "Early healthcare chatbot exploring natural-language access to SUS data, including experimentation around sanitization, fallback logic and vector search.",
+    bullets: [
+      "Makes the portfolio's experimentation path more visible.",
+      "Helps tell a coherent story from prototype to more rigorous healthcare agents.",
+      "Adds evidence of iterative learning rather than one-off builds."
     ],
-    tags: ["LangChain", "Healthcare", "Portuguese NLP", "Chatbot", "Experimentation"]
+    tags: ["LangChain", "Healthcare", "Chatbot", "Experimentation", "PT-BR"]
   }
 ];
 
-const filters = ["All", ...new Set(projects.map((project) => project.track))];
+const skillGroups = [
+  {
+    title: "AI & Agentic Systems",
+    items: ["LangGraph", "OpenAI API", "RAG", "Tool Calling", "Structured Output", "Prompt Evaluation"]
+  },
+  {
+    title: "Data & Analytics",
+    items: ["Python", "Pandas", "DuckDB", "SQL", "Feature Work", "Healthcare Data"]
+  },
+  {
+    title: "APIs & Product Delivery",
+    items: ["FastAPI", "Flask", "REST APIs", "React", "Dashboards", "Service Integration"]
+  },
+  {
+    title: "Infrastructure & Search",
+    items: ["AWS", "Step Functions", "Lambda", "PostgreSQL", "pgvector", "OpenSearch"]
+  }
+];
 
-const filterContainer = document.querySelector("#filters");
-const grid = document.querySelector("#project-grid");
+const contacts = [
+  {
+    title: "GitHub",
+    value: "github.com/MaiconKevyn",
+    href: "https://github.com/MaiconKevyn",
+    icon: "GH",
+    gradient: "linear-gradient(135deg, #14b8a6, #10b981)"
+  },
+  {
+    title: "LinkedIn",
+    value: "linkedin.com/in/maiconkevyn",
+    href: "https://www.linkedin.com/in/maiconkevyn/",
+    icon: "in",
+    gradient: "linear-gradient(135deg, #06b6d4, #0ea5e9)"
+  },
+  {
+    title: "Kaggle",
+    value: "kaggle.com/kevynmaicon",
+    href: "https://www.kaggle.com/kevynmaicon",
+    icon: "KG",
+    gradient: "linear-gradient(135deg, #3b82f6, #06b6d4)"
+  },
+  {
+    title: "LeetCode",
+    value: "leetcode.com/u/maiconkevyn",
+    href: "https://leetcode.com/u/maiconkevyn/",
+    icon: "LC",
+    gradient: "linear-gradient(135deg, #fb923c, #f97316)"
+  },
+  {
+    title: "Location",
+    value: "Brazil",
+    icon: "BR",
+    gradient: "linear-gradient(135deg, #22c55e, #14b8a6)"
+  }
+];
 
-function createFilterButton(filter, activeFilter) {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = `filter-button${filter === activeFilter ? " is-active" : ""}`;
-  button.textContent = filter;
-  button.addEventListener("click", () => renderPortfolio(filter));
-  return button;
+const timelineContainer = document.querySelector("#timeline");
+const projectRail = document.querySelector("#project-rail");
+const skillsGrid = document.querySelector("#skills-grid");
+const contactGrid = document.querySelector("#contact-grid");
+const progressBar = document.querySelector("#scroll-progress");
+const bootScreen = document.querySelector("#boot-screen");
+
+function createTimelineItem(entry) {
+  const wrapper = document.createElement("article");
+  wrapper.className = "timeline-item reveal";
+
+  const dot = document.createElement("span");
+  dot.className = "timeline-dot";
+  dot.style.color = entry.color;
+  dot.style.backgroundColor = entry.color;
+
+  const card = document.createElement("div");
+  card.className = "timeline-card";
+  card.style.borderColor = `${entry.color}22`;
+
+  const header = document.createElement("div");
+  header.className = "timeline-header";
+
+  const title = document.createElement("h3");
+  title.className = "timeline-title";
+  title.textContent = entry.title;
+
+  const label = document.createElement("span");
+  label.className = "timeline-label";
+  label.textContent = entry.label;
+  label.style.color = entry.color;
+  label.style.borderColor = `${entry.color}40`;
+
+  header.append(title, label);
+
+  const summary = document.createElement("p");
+  summary.className = "timeline-subtitle";
+  summary.textContent = entry.summary;
+
+  const list = document.createElement("ul");
+  list.className = "timeline-bullets";
+
+  entry.bullets.forEach((bullet) => {
+    const item = document.createElement("li");
+    item.style.setProperty("--accent", entry.color);
+    item.textContent = bullet;
+    list.appendChild(item);
+  });
+
+  card.append(header, summary, list);
+  wrapper.append(dot, card);
+  return wrapper;
 }
 
 function createProjectCard(project) {
   const card = document.createElement("article");
-  card.className = "project-card";
+  card.className = "project-card reveal";
   card.dataset.tone = project.tone;
 
-  const meta = document.createElement("div");
-  meta.className = "project-meta";
-  meta.innerHTML = `<span>${project.track}</span><span>GitHub Repository</span>`;
+  const visual = document.createElement("div");
+  visual.className = "project-visual";
+
+  const kicker = document.createElement("span");
+  kicker.className = "project-kicker";
+  kicker.textContent = project.kicker;
+
+  const signal = document.createElement("div");
+  signal.className = "project-signal";
+  signal.innerHTML = `<strong>${project.signal}</strong><span>${project.signalLabel}</span>`;
+
+  visual.append(kicker, signal);
 
   const title = document.createElement("h3");
   title.textContent = project.title;
@@ -115,19 +283,18 @@ function createProjectCard(project) {
   summary.className = "project-summary";
   summary.textContent = project.summary;
 
-  const highlights = document.createElement("ul");
-  highlights.className = "project-highlights";
-  project.highlights.forEach((item) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = item;
-    highlights.appendChild(listItem);
+  const list = document.createElement("ul");
+  list.className = "project-bullets";
+  project.bullets.forEach((bullet) => {
+    const item = document.createElement("li");
+    item.textContent = bullet;
+    list.appendChild(item);
   });
 
   const tags = document.createElement("div");
-  tags.className = "tag-row";
+  tags.className = "project-tags";
   project.tags.forEach((tagText) => {
     const tag = document.createElement("span");
-    tag.className = "tag";
     tag.textContent = tagText;
     tags.appendChild(tag);
   });
@@ -139,24 +306,65 @@ function createProjectCard(project) {
   link.rel = "noreferrer";
   link.textContent = "Open repository";
 
-  card.append(meta, title, summary, highlights, tags, link);
+  card.append(visual, title, summary, list, tags, link);
   return card;
 }
 
-function renderPortfolio(activeFilter = "All") {
-  filterContainer.replaceChildren(
-    ...filters.map((filter) => createFilterButton(filter, activeFilter))
-  );
+function createSkillCard(group) {
+  const card = document.createElement("article");
+  card.className = "skill-card reveal";
 
-  const visibleProjects =
-    activeFilter === "All"
-      ? projects
-      : projects.filter((project) => project.track === activeFilter);
+  const title = document.createElement("h3");
+  title.textContent = group.title;
 
-  grid.replaceChildren(...visibleProjects.map(createProjectCard));
+  const list = document.createElement("div");
+  list.className = "skill-list";
+
+  group.items.forEach((itemText) => {
+    const item = document.createElement("span");
+    item.textContent = itemText;
+    list.appendChild(item);
+  });
+
+  card.append(title, list);
+  return card;
+}
+
+function createContactCard(contact) {
+  const element = contact.href ? document.createElement("a") : document.createElement("article");
+  element.className = "contact-card reveal";
+
+  if (contact.href) {
+    element.href = contact.href;
+    element.target = "_blank";
+    element.rel = "noreferrer";
+  }
+
+  const icon = document.createElement("div");
+  icon.className = "contact-icon";
+  icon.style.background = contact.gradient;
+  icon.textContent = contact.icon;
+
+  const title = document.createElement("h3");
+  title.textContent = contact.title;
+
+  const value = document.createElement("p");
+  value.className = "contact-value";
+  value.textContent = contact.value;
+
+  element.append(icon, title, value);
+  return element;
+}
+
+function render() {
+  timelineContainer.replaceChildren(...timelineEntries.map(createTimelineItem));
+  projectRail.replaceChildren(...projects.map(createProjectCard));
+  skillsGrid.replaceChildren(...skillGroups.map(createSkillCard));
+  contactGrid.replaceChildren(...contacts.map(createContactCard));
 }
 
 function setupReveal() {
+  const elements = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -166,16 +374,137 @@ function setupReveal() {
         }
       });
     },
-    {
-      threshold: 0.16
-    }
+    { threshold: 0.14 }
   );
 
-  document.querySelectorAll(".reveal").forEach((element) => {
-    observer.observe(element);
+  elements.forEach((element) => observer.observe(element));
+}
+
+function updateProgress() {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const ratio = total <= 0 ? 0 : window.scrollY / total;
+  progressBar.style.width = `${Math.min(Math.max(ratio, 0), 1) * 100}%`;
+}
+
+function setupProjectControls() {
+  const prev = document.querySelector("#project-prev");
+  const next = document.querySelector("#project-next");
+
+  const scrollByAmount = () => Math.min(projectRail.clientWidth * 0.82, 420);
+
+  prev.addEventListener("click", () => {
+    projectRail.scrollBy({ left: -scrollByAmount(), behavior: "smooth" });
+  });
+
+  next.addEventListener("click", () => {
+    projectRail.scrollBy({ left: scrollByAmount(), behavior: "smooth" });
   });
 }
 
+function hideBootScreen() {
+  window.setTimeout(() => {
+    bootScreen.classList.add("is-hidden");
+  }, 900);
+}
+
+function setupEasterEgg() {
+  window.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "n") {
+      event.preventDefault();
+      document.body.classList.toggle("neural-boost");
+    }
+  });
+}
+
+function setupNetworkCanvas() {
+  const canvas = document.querySelector("#network-canvas");
+  const context = canvas.getContext("2d");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!context || reducedMotion) {
+    return;
+  }
+
+  const config = {
+    nodeCount: window.innerWidth < 768 ? 32 : 54,
+    maxDistance: window.innerWidth < 768 ? 110 : 150,
+    speed: window.innerWidth < 768 ? 0.18 : 0.24
+  };
+
+  const nodes = [];
+
+  function resize() {
+    canvas.width = window.innerWidth * window.devicePixelRatio;
+    canvas.height = window.innerHeight * window.devicePixelRatio;
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    context.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+
+    nodes.length = 0;
+    for (let index = 0; index < config.nodeCount; index += 1) {
+      nodes.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        vx: (Math.random() - 0.5) * config.speed,
+        vy: (Math.random() - 0.5) * config.speed
+      });
+    }
+  }
+
+  function draw() {
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    for (let index = 0; index < nodes.length; index += 1) {
+      const node = nodes[index];
+      node.x += node.vx;
+      node.y += node.vy;
+
+      if (node.x < 0 || node.x > window.innerWidth) {
+        node.vx *= -1;
+      }
+
+      if (node.y < 0 || node.y > window.innerHeight) {
+        node.vy *= -1;
+      }
+
+      context.beginPath();
+      context.fillStyle = "rgba(34, 211, 238, 0.88)";
+      context.arc(node.x, node.y, 1.6, 0, Math.PI * 2);
+      context.fill();
+
+      for (let nested = index + 1; nested < nodes.length; nested += 1) {
+        const other = nodes[nested];
+        const dx = node.x - other.x;
+        const dy = node.y - other.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < config.maxDistance) {
+          const alpha = 1 - distance / config.maxDistance;
+          context.beginPath();
+          context.strokeStyle = `rgba(34, 211, 238, ${alpha * 0.22})`;
+          context.lineWidth = 1;
+          context.moveTo(node.x, node.y);
+          context.lineTo(other.x, other.y);
+          context.stroke();
+        }
+      }
+    }
+
+    window.requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+  window.addEventListener("resize", resize);
+}
+
 document.querySelector("#year").textContent = new Date().getFullYear();
-renderPortfolio();
+render();
 setupReveal();
+setupProjectControls();
+setupEasterEgg();
+setupNetworkCanvas();
+updateProgress();
+hideBootScreen();
+
+window.addEventListener("scroll", updateProgress, { passive: true });
