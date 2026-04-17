@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maicon Kevyn | AI Engineer & Data Scientist</title>
+    <meta
+      name="description"
+      content="Portfolio of Maicon Kevyn, focused on AI Engineering, data products, agentic systems, and applied machine learning."
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="page-shell" id="top">
+      <header class="hero reveal">
+        <nav class="topbar">
+          <a class="brand" href="#top" aria-label="Go to top">
+            <span class="brand-mark">MK</span>
+            <span class="brand-text">AI / Data Portfolio</span>
+          </a>
+          <div class="topbar-links">
+            <a href="#work">Projects</a>
+            <a href="#approach">Approach</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+
+        <div class="hero-grid">
+          <section class="hero-copy">
+            <p class="eyebrow">AI Engineer / Data Scientist</p>
+            <h1>
+              I build applied AI systems that are evaluated, observable and
+              useful outside the notebook.
+            </h1>
+            <p class="hero-text">
+              I am Maicon Kevyn, a Brazilian data professional with a background
+              in Data Science and Astrophysics. My work sits at the intersection
+              of agentic workflows, retrieval systems, healthcare analytics,
+              applied machine learning, and production-focused backend delivery.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#work">See selected work</a>
+              <a
+                class="button button-secondary"
+                href="https://github.com/MaiconKevyn"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View GitHub
+              </a>
+            </div>
+
+            <ul class="hero-metrics" aria-label="Key highlights">
+              <li>
+                <span class="metric-value">37M+</span>
+                <span class="metric-label">healthcare records queried in a Portuguese TXT2SQL system</span>
+              </li>
+              <li>
+                <span class="metric-value">96.3%</span>
+                <span class="metric-label">execution accuracy reported in controlled TXT2SQL evaluation</span>
+              </li>
+              <li>
+                <span class="metric-value">AWS + LangGraph</span>
+                <span class="metric-label">delivery experience across cloud pipelines and agent orchestration</span>
+              </li>
+            </ul>
+          </section>
+
+          <aside class="hero-panel">
+            <div class="profile-card">
+              <div class="profile-row">
+                <img
+                  class="profile-photo"
+                  src="https://avatars.githubusercontent.com/u/101146083?v=4"
+                  alt="Portrait of Maicon Kevyn"
+                />
+                <div>
+                  <p class="profile-name">Maicon Kevyn</p>
+                  <p class="profile-location">Brazil · UFRGS · Astrophysics + Data Science</p>
+                </div>
+              </div>
+
+              <div class="mini-stack">
+                <p class="panel-label">Current stack</p>
+                <div class="stack-grid">
+                  <span>Python</span>
+                  <span>FastAPI</span>
+                  <span>LangGraph</span>
+                  <span>OpenAI</span>
+                  <span>DuckDB</span>
+                  <span>PostgreSQL</span>
+                  <span>pgvector</span>
+                  <span>AWS</span>
+                </div>
+              </div>
+
+              <div class="signal-block">
+                <p class="panel-label">What I optimize for</p>
+                <ul>
+                  <li>Reliable orchestration instead of prompt-only demos</li>
+                  <li>Measured quality with benchmarks, traces, and guardrails</li>
+                  <li>Interfaces that make technical systems legible to users</li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section class="section reveal" id="focus">
+          <div class="section-heading">
+            <p class="section-kicker">Focus</p>
+            <h2>Where I create the most value</h2>
+          </div>
+
+          <div class="focus-grid">
+            <article class="focus-card">
+              <p class="focus-index">01</p>
+              <h3>Agentic AI Systems</h3>
+              <p>
+                Multi-step workflows with tool calling, structured outputs,
+                retries, validation loops, and explicit orchestration through
+                LangGraph.
+              </p>
+            </article>
+
+            <article class="focus-card">
+              <p class="focus-index">02</p>
+              <h3>Applied Data Science</h3>
+              <p>
+                End-to-end ML projects covering experimentation, feature work,
+                evaluation, and model-driven decision support in domain-heavy
+                datasets.
+              </p>
+            </article>
+
+            <article class="focus-card">
+              <p class="focus-index">03</p>
+              <h3>Data Products & APIs</h3>
+              <p>
+                Delivery-minded systems with REST APIs, web frontends, cloud
+                pipelines, database integration, and clear operational tradeoffs.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="work">
+          <div class="section-heading section-heading-row">
+            <div>
+              <p class="section-kicker">Selected Work</p>
+              <h2>Projects organized for AI Engineer / Data Scientist roles</h2>
+            </div>
+            <p class="section-note">
+              The portfolio emphasizes systems that show architecture, data
+              handling, evaluation, and delivery discipline.
+            </p>
+          </div>
+
+          <div class="filters" id="filters" aria-label="Project filters"></div>
+          <div class="project-grid" id="project-grid"></div>
+          <noscript>
+            <p class="section-note">
+              JavaScript is used to render the project cards on this page.
+            </p>
+          </noscript>
+        </section>
+
+        <section class="section reveal" id="approach">
+          <div class="section-heading">
+            <p class="section-kicker">Approach</p>
+            <h2>How I frame technical work</h2>
+          </div>
+
+          <div class="approach-grid">
+            <article class="approach-card">
+              <h3>Evaluation before claims</h3>
+              <p>
+                I favor benchmarks, traces, validation contracts, and failure
+                modes over impressive-but-unmeasured demos.
+              </p>
+            </article>
+
+            <article class="approach-card">
+              <h3>Systems thinking</h3>
+              <p>
+                I care about the full path: data access, orchestration,
+                interfaces, deployment, and the operational cost of each design
+                choice.
+              </p>
+            </article>
+
+            <article class="approach-card">
+              <h3>Domain-aware AI</h3>
+              <p>
+                My strongest projects connect models to real contexts such as
+                healthcare, document intelligence, cyber workflows, and public
+                data exploration.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section cta-section reveal" id="contact">
+          <div class="cta-copy">
+            <p class="section-kicker">Contact</p>
+            <h2>Open to opportunities that require technical depth and product pragmatism.</h2>
+            <p>
+              If you are hiring for AI Engineering, Data Science, GenAI systems,
+              or analytical backend work, these are the best entry points to my
+              work and background.
+            </p>
+          </div>
+
+          <div class="contact-links">
+            <a href="https://github.com/MaiconKevyn" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/maiconkevyn/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.kaggle.com/kevynmaicon" target="_blank" rel="noreferrer">Kaggle</a>
+            <a href="https://leetcode.com/u/maiconkevyn/" target="_blank" rel="noreferrer">LeetCode</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Built as a static GitHub Pages site.</p>
+        <p><span id="year"></span> · Maicon Kevyn</p>
+      </footer>
+    </div>
+  </body>
+</html>
