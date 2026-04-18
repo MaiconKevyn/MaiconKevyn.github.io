@@ -9,7 +9,6 @@ const NeuralNetworkEasterEgg = lazy(() => import('./components/NeuralNetworkEast
 
 const About = lazy(() => import('./components/About'));
 const Projects = lazy(() => import('./components/Projects'));
-const Awards = lazy(() => import('./components/Awards'));
 const Skills = lazy(() => import('./components/Skills'));
 const Contact = lazy(() => import('./components/Contact'));
 const Chatbot = lazy(() => import('./components/Chatbot'));
@@ -35,7 +34,6 @@ function App() {
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <About />
         <Projects />
-        <Awards />
         <Skills />
         <Contact />
         <Chatbot />

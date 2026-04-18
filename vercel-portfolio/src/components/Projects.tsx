@@ -1,353 +1,288 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Github, TrendingUp, Zap, Target, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useRef, useState } from 'react';
-import ProjectImpactChart from './ProjectImpactChart';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, FileText, Github, Zap } from 'lucide-react';
 
-const projects = [
+type Project = {
+  title: string;
+  tagline: string;
+  description: string;
+  achievements: string[];
+  whyItMatters: string;
+  tech: string[];
+  githubUrl: string;
+  publication?: {
+    label: string;
+    title: string;
+    url: string;
+  };
+  gradient: string;
+  accent: string;
+  signal: {
+    label: string;
+    display: string;
+  };
+  image: string;
+};
+
+const projects: Project[] = [
   {
-    title: 'TXT2SQL for DATASUS',
-    tagline: 'Portuguese NL2SQL over Brazilian healthcare microdata',
-    description: 'Healthcare-focused agentic workflow that routes natural-language questions across schema, conversational, and execution paths, then validates and repairs SQL before querying Brazilian SUS microdata.',
+    title: 'Healthcare NL2SQL Agent',
+    tagline: 'Natural language to SQL for public-health data',
+    description: 'An LLM workflow that turns healthcare questions into validated SQL over a large public-health dataset, combining LangGraph routing, schema-aware generation, retry logic, and a user-facing query interface.',
     achievements: [
-      'Queries roughly 37 million hospital records across 16 tables.',
-      'Reported 96.3% execution accuracy in controlled evaluation.',
-      'Combines LangGraph routing, SQL validation, retry logic, CLI, API, and web paths.',
-      'Strong domain adaptation signal for regulated public-health data.',
+      'Transforms natural-language healthcare questions into SQL over 11M+ records.',
+      'Built on a normalized PostgreSQL schema covering 15+ public-health tables.',
+      'Uses LangGraph routing, SQL validation, retry logic, and a user-facing query flow.',
     ],
-    tech: ['LangGraph', 'OpenAI', 'DuckDB', 'Python', 'Healthcare Data'],
+    whyItMatters: 'Strong intersection of healthcare AI, data modeling, and applied LLM orchestration in a regulated domain.',
+    tech: ['LangGraph', 'PostgreSQL', 'Pydantic', 'OpenAI', 'SQL Validation'],
     githubUrl: 'https://github.com/MaiconKevyn/agent-txt2sql-langgraph',
+    publication: {
+      label: 'Paper',
+      title: 'From Questions to Answers: A Natural Language Interface for DATASUS Hospitalization Data',
+      url: 'https://sol.sbc.org.br/index.php/eramiars/article/view/39440',
+    },
     gradient: 'from-cyan-500 to-blue-500',
-    impactMetric: { value: 96.3, label: 'Execution Accuracy', display: '96.3%' },
-    image: '/images/txt2sql-datasus-card.svg'
+    accent: '#22d3ee',
+    signal: { label: 'Healthcare records queried', display: '11M+' },
+    image: '/images/txt2sql-datasus-card.svg',
   },
   {
     title: 'AWS Universal Extractor',
-    tagline: 'Serverless document intelligence with structured extraction',
-    description: 'Asynchronous AWS pipeline for structured PDF extraction using S3, Lambda, Step Functions, YAML-driven extraction profiles, and LLM structured outputs with explicit validation stages.',
+    tagline: 'Schema-driven document extraction with typed outputs',
+    description: 'Serverless document AI pipeline on AWS Step Functions that ingests PDF, DOCX, XLSX, TXT, and JSON, applies Textract OCR when needed, and produces schema-validated JSON through GPT-4o tool calling with Pydantic-typed fields.',
     achievements: [
-      'Separates upload, fetch, extraction, profile resolution, LLM calls, validation, and persistence.',
-      'Persists outputs by request id, profile, and version to keep the workflow inspectable.',
-      'Strong cloud-native signal beyond local notebooks and prototypes.',
-      'Clear event-driven boundaries suited to production AI delivery.',
+      'Step Functions orchestration with Lambda stages for ingestion, OCR, extraction, and validation.',
+      'GPT-4o tool calling fills Pydantic schemas per document type — typed JSON, not free-form text.',
+      'AWS Textract plus parser composition recovers structured content across heterogeneous formats.',
     ],
-    tech: ['AWS', 'Step Functions', 'Lambda', 'S3', 'Structured Outputs'],
+    whyItMatters: 'Document AI with typed contracts, serverless orchestration, and integration-ready outputs — not notebook extraction.',
+    tech: ['AWS Textract', 'Step Functions', 'GPT-4o', 'LangChain', 'Pydantic', 'Tool Calling'],
     githubUrl: 'https://github.com/MaiconKevyn/aws-universal-extractor',
     gradient: 'from-purple-500 to-fuchsia-500',
-    impactMetric: { value: 82, label: 'Pipeline Coverage', display: 'Async AWS' },
-    image: '/images/aws-universal-extractor-card.svg'
+    accent: '#c084fc',
+    signal: { label: 'Schema-driven extraction', display: 'Typed JSON' },
+    image: '/images/aws-universal-extractor-card.svg',
   },
   {
     title: 'Research Agent with Continuous Evaluation',
-    tagline: 'Grounded research workflows with retrieval and explicit contracts',
-    description: 'Evaluation-minded research agent using FastAPI, React, LangGraph, PostgreSQL, pgvector, structured outputs, and tool-based evidence gathering to keep behavior measurable and debuggable.',
+    tagline: 'Four-stage LangGraph pipeline with typed contracts and execution traces',
+    description: 'Research agent built on a 4-stage LangGraph pipeline — classify, plan, synthesize, evaluate — backed by Pydantic schemas at every stage, pgvector retrieval, live web search, and full execution traces for inspection and iterative evaluation.',
     achievements: [
-      'Uses schemas for classification, planning, synthesis, and evaluation stages.',
-      'Combines vector search, web search, and execution trace reporting.',
-      'Represents a more mature AI architecture direction with explicit contracts.',
-      'Balances retrieval quality with observable system behavior.',
+      'Pydantic schemas enforce typed outputs at classify, plan, synthesize, and evaluate stages.',
+      'pgvector document retrieval combined with live web search for grounded evidence gathering.',
+      'Full execution traces per run — every tool call, prompt, and decision is inspectable.',
     ],
-    tech: ['FastAPI', 'React', 'pgvector', 'LangGraph', 'Guardrails'],
+    whyItMatters: 'Typed contracts and traceable execution over opaque prompt chains — the production pattern for agent reliability.',
+    tech: ['LangGraph', 'FastAPI', 'pgvector', 'Pydantic', 'Ragas', 'React'],
     githubUrl: 'https://github.com/MaiconKevyn/agentic-research-pipeline',
     gradient: 'from-emerald-500 to-cyan-500',
-    impactMetric: { value: 85, label: 'Grounded Retrieval', display: 'pgvector' },
-    image: '/images/research-agent-card.svg'
+    accent: '#34d399',
+    signal: { label: 'Classify · Plan · Synth · Eval', display: '4-stage' },
+    image: '/images/research-agent-card.svg',
   },
   {
-    title: 'Amazon Feedback Analysis',
-    tagline: 'Customer feedback intelligence with zero-shot topic analysis',
-    description: 'Applied NLP workflow over Amazon reviews combining GPT-4o sentiment analysis, DeBERTa zero-shot classification, topic modeling, and a Streamlit dashboard for interactive exploration.',
+    title: 'Applied NLP Benchmarking',
+    tagline: 'Comparative LLM evaluation for sentiment and topic discovery',
+    description: 'Comparative NLP workflow benchmarking OpenAI GPT-4o against Hugging Face DeBERTa zero-shot classification on Amazon reviews, combined with embedding-based clustering to surface coherent topic structures and stakeholder-facing insights.',
     achievements: [
-      'Uses GPT-4o for sentiment classification and DeBERTa for topic detection.',
-      'Highlights which issues most negatively affect user experience.',
-      'Presents results through interactive dashboard-style analysis.',
-      'Balances LLM systems, classical NLP, and business-facing storytelling.',
+      'Benchmarks OpenAI GPT-4o against Hugging Face DeBERTa zero-shot for sentiment and topic classification.',
+      'Uses embeddings with K-Means, HDBSCAN, and UMAP to surface coherent topic clusters.',
+      'Translates benchmark results into actionable insights on product issues impacting user experience.',
     ],
-    tech: ['GPT-4o', 'DeBERTa', 'Streamlit', 'Pandas', 'Zero-shot NLP'],
+    whyItMatters: 'Comparative LLM methodology plus clustering analysis — evaluation discipline applied to applied NLP work.',
+    tech: ['GPT-4o', 'DeBERTa', 'Zero-shot', 'HDBSCAN', 'UMAP', 'Streamlit'],
     githubUrl: 'https://github.com/MaiconKevyn/amazon-feedback-analysis',
     gradient: 'from-orange-500 to-cyan-500',
-    impactMetric: { value: 78, label: 'Topic Insight Coverage', display: 'Zero-shot' },
-    image: '/images/amazon-feedback-analysis-card.svg'
+    accent: '#fb923c',
+    signal: { label: 'OpenAI vs Hugging Face', display: 'Benchmark' },
+    image: '/images/amazon-feedback-analysis-card.svg',
   },
 ];
 
-function ProjectCard({ project, index }: { project: typeof projects[0], index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseX = useSpring(x, { stiffness: 500, damping: 100 });
-  const mouseY = useSpring(y, { stiffness: 500, damping: 100 });
-
-  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["7deg", "-7deg"]);
-  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-7deg", "7deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-
-    const rect = ref.current.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseXFromCenter = e.clientX - rect.left - width / 2;
-    const mouseYFromCenter = e.clientY - rect.top - height / 2;
-
-    x.set(mouseXFromCenter / width);
-    y.set(mouseYFromCenter / height);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="group relative perspective-1000 min-w-[350px] md:min-w-[600px] lg:min-w-[900px] snap-center"
+    <motion.article
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.55, delay: (index % 2) * 0.08 }}
+      className="group relative h-full"
     >
-      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ transform: "translateZ(-50px)" }}
+      <div
+        className={`absolute -inset-px rounded-[1.75rem] bg-gradient-to-br ${project.gradient} opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-20`}
       />
 
-      <div className="relative bg-slate-900/80 backdrop-blur-xl rounded-[2rem] border border-white/10 overflow-hidden hover:border-cyan-400/50 transition-colors duration-500 shadow-2xl h-full flex flex-col lg:flex-row">
+      <div className="relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/80 shadow-xl backdrop-blur-xl transition-colors duration-500 group-hover:border-cyan-400/30">
+        {/* Hero strip with KPI */}
+        <div className="relative overflow-hidden border-b border-white/5">
+          <div className="absolute inset-0 opacity-[0.18]">
+            <img
+              src={project.image}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="absolute inset-0 bg-slate-950/60" />
+          <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-[0.12] mix-blend-overlay`} />
 
-        <div className="p-8 lg:p-10 flex flex-col justify-between space-y-6 lg:w-1/2" style={{ transform: "translateZ(20px)" }}>
-          <div>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="inline-block"
+          <div className="relative flex items-center justify-between gap-6 px-6 py-6 sm:px-7">
+            <div
+              className="rounded-full border border-white/15 bg-slate-950/70 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-slate-200 backdrop-blur-md"
+              style={{ fontFamily: 'JetBrains Mono, monospace' }}
             >
-              <h3 className={`text-3xl font-bold mb-2 bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}>
-                {project.title}
-              </h3>
-            </motion.div>
-            <p className="text-cyan-400 text-lg font-medium mb-4">
-              {project.tagline}
-            </p>
-            <p className="text-gray-300 text-base leading-relaxed line-clamp-3 hover:line-clamp-none transition-all">
-              {project.description}
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 text-cyan-400 font-semibold uppercase tracking-wider text-xs">
-              <Target className="w-4 h-4" />
-              <span>Key Achievements</span>
+              {String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
             </div>
-            <div className="grid gap-2">
-              {project.achievements.slice(0, 3).map((achievement, i) => (
-                <motion.div
-                  key={i}
-                  className="flex items-start gap-2"
-                >
-                  <Zap className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-300 text-sm">{achievement}</span>
-                </motion.div>
-              ))}
+            <div className="rounded-2xl border border-white/10 bg-slate-950/75 px-4 py-2.5 text-right backdrop-blur-md">
+              <div
+                className="text-2xl font-black leading-none sm:text-3xl"
+                style={{ color: project.accent, fontFamily: 'JetBrains Mono, monospace' }}
+              >
+                {project.signal.display}
+              </div>
+              <div
+                className="mt-1 text-[0.6rem] uppercase tracking-[0.2em] text-slate-400"
+                style={{ fontFamily: 'JetBrains Mono, monospace' }}
+              >
+                {project.signal.label}
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="flex flex-wrap gap-2">
+        {/* Body */}
+        <div className="flex flex-1 flex-col gap-5 px-6 py-6 sm:px-7">
+          <div>
+            <h3
+              className={`bg-gradient-to-r ${project.gradient} bg-clip-text text-2xl font-bold text-transparent`}
+            >
+              {project.title}
+            </h3>
+            <p className="mt-1.5 text-sm font-medium text-cyan-300/90">{project.tagline}</p>
+          </div>
+
+          <p className="text-sm leading-relaxed text-slate-300">{project.description}</p>
+
+          <ul className="space-y-2.5">
+            {project.achievements.slice(0, 3).map((achievement) => (
+              <li key={achievement} className="flex gap-3 text-sm leading-relaxed text-slate-300">
+                <Zap
+                  size={14}
+                  className="mt-1 shrink-0"
+                  style={{ color: project.accent }}
+                  aria-hidden="true"
+                />
+                <span>{achievement}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div
+            className="rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-[0.82rem] italic leading-relaxed text-slate-400"
+          >
+            {project.whyItMatters}
+          </div>
+
+          <div className="flex flex-wrap gap-1.5">
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className={`px-3 py-1 bg-white/5 rounded-full text-xs text-cyan-300 border border-white/10 hover:bg-white/10 transition-colors`}
+                className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[0.7rem] font-medium text-slate-300"
               >
                 {tech}
               </span>
             ))}
           </div>
 
-          <div className="flex gap-4 pt-2">
-            {project.githubUrl && (
-              <motion.a
-                href={project.githubUrl}
+          <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-medium text-white transition-all hover:border-cyan-400/40 hover:bg-white/[0.08]"
+            >
+              <Github size={15} />
+              Repository
+              <ArrowUpRight size={13} className="opacity-60" />
+            </a>
+
+            {project.publication && (
+              <a
+                href={project.publication.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white font-bold text-sm hover:bg-white/10 transition-all"
+                className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/[0.06] px-4 py-2 text-sm font-medium text-cyan-100 transition-all hover:bg-cyan-400/[0.12]"
+                title={project.publication.title}
               >
-                <Github size={16} />
-                Repository
-              </motion.a>
+                <FileText size={15} />
+                {project.publication.label}
+                <ArrowUpRight size={13} className="opacity-60" />
+              </a>
             )}
           </div>
         </div>
-
-        <div className="relative h-[300px] lg:h-auto lg:w-1/2 bg-gradient-to-br from-slate-800 to-slate-900 p-8 flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
-
-          <motion.div
-            className="absolute inset-0 opacity-20"
-            style={{
-              scale: 1.1,
-              translateX: useTransform(mouseX, [-0.5, 0.5], ["-5%", "5%"]),
-              translateY: useTransform(mouseY, [-0.5, 0.5], ["-5%", "5%"]),
-            }}
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </motion.div>
-
-          <motion.div
-            className="relative z-10 w-full max-w-[280px]"
-            style={{ transform: "translateZ(50px)" }}
-          >
-            <div className={`bg-gradient-to-br ${project.gradient} bg-opacity-10 rounded-3xl p-6 border border-white/10 backdrop-blur-md shadow-xl`}>
-              <div className="text-center">
-                <TrendingUp className="w-12 h-12 text-white mx-auto mb-4 drop-shadow-lg" />
-                <div className="text-5xl font-black text-white mb-2 tracking-tight drop-shadow-lg">
-                  {project.impactMetric.display ?? `${project.impactMetric.value}%`}
-                </div>
-                <div className="text-sm text-white/90 font-bold uppercase tracking-widest">
-                  {project.impactMetric.label}
-                </div>
-              </div>
-              <div className="mt-6 h-[100px]">
-                <ProjectImpactChart value={project.impactMetric.value} />
-              </div>
-            </div>
-          </motion.div>
-        </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 }
 
 export default function Projects() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-
-  // Swipe detection logic
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) {
-      scrollRight();
-    } else if (isRightSwipe) {
-      scrollLeft();
-    }
-
-    // Reset
-    setTouchStart(0);
-    setTouchEnd(0);
-  };
-
-  const scrollLeft = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: -window.innerWidth * 0.8, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: window.innerWidth * 0.8, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+    <section id="projects" className="relative overflow-hidden py-20">
+      <div className="mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div
+            className="mb-4 text-[0.72rem] uppercase tracking-[0.42em] text-cyan-400"
+            style={{ fontFamily: 'JetBrains Mono, monospace' }}
+          >
+            SELECTED WORK
+          </div>
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Featured Projects
             </span>
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto rounded-full" />
-          <p className="text-gray-400 mt-4 text-lg">
-            Swipe to explore my latest work
+          <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400" />
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-400">
+            Four portfolio cases selected to show applied AI delivery, retrieval design, and production-minded engineering.
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Scroll Buttons for Desktop */}
-          <button
-            onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 bg-slate-800/80 p-3 rounded-full text-white hover:bg-cyan-500 hover:scale-110 transition-all hidden md:block backdrop-blur-sm border border-white/10"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          <button
-            onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 bg-slate-800/80 p-3 rounded-full text-white hover:bg-cyan-500 hover:scale-110 transition-all hidden md:block backdrop-blur-sm border border-white/10"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          {/* Horizontal Scroll Container */}
-          <div
-            ref={containerRef}
-            className="flex overflow-x-auto gap-6 md:gap-8 pb-12 snap-x snap-mandatory hide-scrollbar"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            {projects.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index} />
-            ))}
-
-            {/* CTA Card as the last item */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="min-w-[300px] flex items-center justify-center snap-center"
-            >
-              <div className="text-center p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-cyan-400/30 transition-colors">
-                <Github size={48} className="mx-auto mb-4 text-gray-400" />
-                <h3 className="text-xl font-bold text-white mb-2">View More</h3>
-                <p className="text-gray-400 mb-6">Check out more projects on GitHub</p>
-                <a
-                  href="https://github.com/MaiconKevyn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-semibold hover:opacity-90 transition-opacity"
-                >
-                  Visit GitHub
-                </a>
-              </div>
-            </motion.div>
-          </div>
+        <div className="grid gap-6 md:gap-7 lg:grid-cols-2">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+          ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-12 rounded-[1.75rem] border border-white/10 bg-white/[0.03] px-6 py-8 text-center"
+        >
+          <Github size={28} className="mx-auto mb-4 text-cyan-300" />
+          <h3 className="text-xl font-bold text-white">More on GitHub</h3>
+          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-400">
+            The cases above are the strongest signal. The full GitHub profile includes additional experiments, utilities, and iteration history.
+          </p>
+          <a
+            href="https://github.com/MaiconKevyn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            <Github size={16} />
+            Visit GitHub
+          </a>
+        </motion.div>
       </div>
     </section>
   );

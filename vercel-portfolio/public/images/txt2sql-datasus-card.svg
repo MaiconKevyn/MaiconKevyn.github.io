@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
-  <title id="title">TXT2SQL for DATASUS</title>
+  <title id="title">Healthcare NL2SQL Agent</title>
   <desc id="desc">Healthcare AI project card for Maicon Kevyn portfolio.</desc>
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -20,13 +20,13 @@
   </g>
   <g font-family="Inter, Arial, sans-serif" fill="#e5f3ff">
     <text x="90" y="120" font-size="34" letter-spacing="8" fill="#67e8f9">HEALTHCARE AI</text>
-    <text x="90" y="220" font-size="92" font-weight="700">TXT2SQL</text>
-    <text x="90" y="310" font-size="92" font-weight="700">FOR DATASUS</text>
-    <text x="90" y="395" font-size="36" fill="#b9d6f3">Portuguese NL2SQL over Brazilian healthcare microdata</text>
+    <text x="90" y="220" font-size="82" font-weight="700">NATURAL LANGUAGE</text>
+    <text x="90" y="305" font-size="82" font-weight="700">TO SQL</text>
+    <text x="90" y="390" font-size="36" fill="#b9d6f3">Healthcare data question answering over public-health records</text>
   </g>
   <rect x="90" y="470" width="390" height="180" rx="26" fill="rgba(8,20,34,0.75)" stroke="#155e75"/>
-  <text x="130" y="545" font-family="JetBrains Mono, monospace" font-size="34" fill="#67e8f9">37M+ records</text>
-  <text x="130" y="595" font-family="JetBrains Mono, monospace" font-size="24" fill="#d3e7fb">LangGraph</text>
+  <text x="130" y="545" font-family="JetBrains Mono, monospace" font-size="34" fill="#67e8f9">11M+ records</text>
+  <text x="130" y="595" font-family="JetBrains Mono, monospace" font-size="24" fill="#d3e7fb">Natural language to SQL</text>
   <text x="130" y="633" font-family="JetBrains Mono, monospace" font-size="24" fill="#d3e7fb">Validation + repair loops</text>
   <path d="M640 570h430" stroke="url(#accent)" stroke-width="4"/>
   <g transform="translate(650 430)" font-family="JetBrains Mono, monospace" fill="#e5f3ff">
@@ -34,6 +34,6 @@
     <text x="36" y="48" font-size="24" fill="#67e8f9">&gt; SELECT admissions</text>
     <text x="36" y="90" font-size="24">FROM hospital_records</text>
     <text x="36" y="132" font-size="24">WHERE procedure = 'SUS';</text>
-    <text x="36" y="182" font-size="22" fill="#93c5fd">accuracy: 96.3%</text>
+    <text x="36" y="182" font-size="22" fill="#93c5fd">schema: 15+ tables</text>
   </g>
 </svg>

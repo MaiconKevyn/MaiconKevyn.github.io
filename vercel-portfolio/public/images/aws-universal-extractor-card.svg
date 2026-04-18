@@ -22,18 +22,18 @@
     <text x="90" y="120" font-size="34" letter-spacing="8" fill="#d8b4fe">DOCUMENT INTELLIGENCE</text>
     <text x="90" y="220" font-size="84" font-weight="700">AWS UNIVERSAL</text>
     <text x="90" y="305" font-size="84" font-weight="700">EXTRACTOR</text>
-    <text x="90" y="390" font-size="34" fill="#ddc4ff">Structured PDF extraction with async AWS orchestration</text>
+    <text x="90" y="390" font-size="34" fill="#ddc4ff">Multi-format extraction with OCR, LangChain, and GPT-4o tool calling</text>
   </g>
   <g transform="translate(90 455)" font-family="JetBrains Mono, monospace">
     <rect width="460" height="180" rx="24" fill="rgba(16,8,26,0.72)" stroke="#a855f7"/>
-    <text x="36" y="58" font-size="30" fill="#e9d5ff">S3  →  Lambda  →  Step Functions</text>
-    <text x="36" y="104" font-size="24" fill="#f5e9ff">profiles.yaml + structured outputs</text>
-    <text x="36" y="146" font-size="24" fill="#f5e9ff">validation + persistence by request id</text>
+    <text x="36" y="58" font-size="28" fill="#e9d5ff">PDF • DOCX • XLSX • TXT • JSON</text>
+    <text x="36" y="104" font-size="24" fill="#f5e9ff">OCR + LangChain + GPT-4o</text>
+    <text x="36" y="146" font-size="24" fill="#f5e9ff">schema templates + universal output</text>
   </g>
   <g transform="translate(670 470)">
     <rect width="430" height="150" rx="24" fill="rgba(32,12,40,0.62)" stroke="#ec4899"/>
-    <text x="38" y="62" font-family="JetBrains Mono, monospace" font-size="32" fill="#f0abfc">ASYNC AWS</text>
-    <text x="38" y="110" font-family="JetBrains Mono, monospace" font-size="24" fill="#f5e9ff">Inspectable pipeline stages</text>
+    <text x="38" y="62" font-family="JetBrains Mono, monospace" font-size="32" fill="#f0abfc">5 FORMATS</text>
+    <text x="38" y="110" font-family="JetBrains Mono, monospace" font-size="24" fill="#f5e9ff">OCR-driven, schema-based extraction</text>
   </g>
   <path d="M90 675h1020" stroke="url(#accent)" stroke-width="4"/>
 </svg>

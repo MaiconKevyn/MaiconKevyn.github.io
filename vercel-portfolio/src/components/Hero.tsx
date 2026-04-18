@@ -3,16 +3,26 @@ import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 const ProfileSphere = lazy(() => import('./ProfileSphere'));
 
 const BIOS = [
-  'Specializing in <strong>LLM orchestration, RAG pipelines, and agentic systems</strong>. Merging evaluation-first engineering with production-grade delivery.',
-  'Building <strong>AI systems</strong> that don\'t just predict — they <strong>explain, validate, and self-repair</strong>. From healthcare microdata to grounded research agents.',
-  'Brazilian data professional with a background in <strong>Data Science and Astrophysics</strong>. Focused on AI that survives contact with reality.',
-  'Creator of <strong>TXT2SQL for DATASUS</strong>. A Portuguese NL2SQL agent over <strong>37M+ Brazilian hospital records</strong>, reporting <strong>96.3% execution accuracy</strong>.',
-  'Designed an <strong>AWS Universal Extractor</strong> — async pipeline using Step Functions, Lambda, S3, and structured outputs for structured PDF extraction.',
-  'Built an <strong>evaluation-minded research agent</strong> with FastAPI, React, LangGraph, PostgreSQL, and pgvector — explicit contracts over prompt theatre.',
-  'My stack combines <strong>LangGraph, OpenAI, DuckDB, FastAPI, and pgvector</strong>. I bridge agent design with API delivery and analytical backends.',
-  'Applied NLP at scale: <strong>Amazon feedback analysis</strong> combining GPT-4o sentiment, DeBERTa zero-shot topic detection, and a Streamlit insight dashboard.',
-  '<strong>Astrophysics @ UFRGS</strong>. Rigorous training in statistics, modeling, and systems — applied daily to LLMs, retrieval, and healthcare analytics.',
-  'Ship beyond notebooks. I deliver <strong>APIs, UIs, and cloud pipelines</strong> — not just experiments. Guardrails, schemas, and measurable behavior come standard.',
+  'AI Engineer / GenAI Engineer building <strong>LLM products, retrieval systems, and document pipelines</strong> across <strong>AWS and Databricks</strong>.',
+  'At <strong>ADP</strong>, I delivered RAG systems for <strong>500+ documents</strong>, reached <strong>92% retrieval precision</strong>, and reduced query response time by <strong>60%</strong>.',
+  'I build <strong>evaluation-first GenAI systems</strong> with MLflow LLM-as-a-Judge, Promptfoo, structured outputs, and inspectable workflows.',
+  'My healthcare research at <strong>PUCRS</strong> includes a LangGraph text-to-SQL agent over <strong>11M+ SUS records</strong> and a PostgreSQL schema spanning <strong>15+ tables</strong>.',
+  'I ship beyond demos using <strong>Lambda, Step Functions, SageMaker, S3, API Gateway, and DynamoDB</strong> as part of the delivery path.',
+  'My background combines <strong>Astrophysics at UFRGS</strong> and <strong>Data Science</strong>, bringing statistics, systems thinking, and analytical rigor into applied AI work.',
+  'I move comfortably between <strong>classical machine learning and modern GenAI</strong> using scikit-learn, XGBoost, LangGraph, vector search, and production APIs.',
+];
+
+const FOCUS_AREAS = [
+  { title: 'RAG', subtitle: 'Grounded retrieval' },
+  { title: 'LLMs', subtitle: 'Structured generation' },
+  { title: 'Agentic AI', subtitle: 'Stateful workflows' },
+  { title: 'ML', subtitle: 'Prediction and NLP' },
+];
+
+const CURRENT_CONTEXT = [
+  'ADP // AI ENGINEER',
+  'PUCRS // AI RESEARCH',
+  'AWS + DATABRICKS',
 ];
 
 export default function Hero() {
@@ -113,8 +123,24 @@ export default function Hero() {
         className="text-cyan-400 tracking-widest font-bold mb-8"
         style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.9rem', letterSpacing: '0.3em' }}
       >
-        AI ENGINEER / DATA SCIENTIST
+        AI ENGINEER / GENAI ENGINEER
       </h2>
+
+      <div className="flex flex-wrap items-center justify-center gap-3 mb-6 px-4" style={{ zIndex: 2 }}>
+        {CURRENT_CONTEXT.map((item) => (
+          <div
+            key={item}
+            className="rounded-full px-4 py-2 text-[0.68rem] text-gray-300 border border-white/10"
+            style={{
+              background: 'rgba(255,255,255,0.04)',
+              fontFamily: 'JetBrains Mono, monospace',
+              letterSpacing: '0.16em',
+            }}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
 
       {/* Bio terminal box */}
       <div
@@ -178,39 +204,53 @@ export default function Hero() {
         GENERATE NEW BIO
       </button>
 
-      {/* Stats */}
-      <div className="grid grid-cols-4 gap-3 mb-10" style={{ maxWidth: 480, width: '90%' }}>
-        {[
-          { value: '37M+', label: 'SUS RECORDS', color: '#22d3ee' },
-          { value: '96.3%', label: 'SQL ACCURACY', color: '#c084fc' },
-          { value: 'RAG', label: 'CLOUD-NATIVE' },
-          { value: '4+', label: 'AI PROJECTS' },
-        ].map(({ value, label, color }) => (
-          <div
-            key={label}
-            className="flex flex-col items-center justify-center p-3 rounded-lg"
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.1)',
-            }}
-          >
-            <span className="font-bold text-xl" style={{ color: color ?? '#fff', fontFamily: 'JetBrains Mono, monospace' }}>
-              {value}
-            </span>
-            <span className="text-gray-500 text-xs mt-1" style={{ letterSpacing: '0.1em', fontFamily: 'JetBrains Mono, monospace' }}>
-              {label}
-            </span>
-          </div>
-        ))}
+      {/* Focus areas */}
+      <div className="mb-10 w-[92%]" style={{ maxWidth: 720 }}>
+        <div
+          className="text-center text-[0.65rem] text-gray-500 tracking-[0.35em] mb-4"
+          style={{ fontFamily: 'JetBrains Mono, monospace' }}
+        >
+          FOCUS AREAS
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {FOCUS_AREAS.map(({ title, subtitle }, index) => (
+            <div
+              key={title}
+              className="flex flex-col items-center justify-center rounded-2xl px-4 py-5 text-center"
+              style={{
+                background: 'rgba(255,255,255,0.045)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                boxShadow: index === 0 ? '0 0 24px rgba(6,182,212,0.08)' : 'none',
+              }}
+            >
+              <span
+                className="font-bold text-lg md:text-xl"
+                style={{
+                  color: '#22d3ee',
+                  fontFamily: 'JetBrains Mono, monospace',
+                  letterSpacing: title.length <= 4 ? '0.12em' : '0.04em',
+                }}
+              >
+                {title}
+              </span>
+              <span
+                className="text-gray-400 text-[0.68rem] md:text-xs mt-2 uppercase"
+                style={{ letterSpacing: '0.12em', fontFamily: 'JetBrains Mono, monospace' }}
+              >
+                {subtitle}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* CTA buttons */}
       <div className="flex flex-col sm:flex-row gap-3 items-center">
         <a
-          href="#projects"
+          href="#experience"
           onClick={(e) => {
             e.preventDefault();
-            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
           }}
           className="px-6 py-2.5 rounded text-sm font-bold transition-all"
           style={{
@@ -221,16 +261,30 @@ export default function Hero() {
             letterSpacing: '0.05em',
           }}
         >
-          VIEW MY WORK
+          VIEW EXPERIENCE
+        </a>
+        <a
+          href="/MaiconKevyn_cv.pdf"
+          download="MaiconKevyn_cv.pdf"
+          className="inline-flex items-center justify-center px-6 py-2.5 rounded text-sm font-bold transition-all hover:bg-cyan-400"
+          style={{
+            background: '#06b6d4',
+            color: '#000',
+            fontFamily: 'JetBrains Mono, monospace',
+            letterSpacing: '0.05em',
+          }}
+        >
+          DOWNLOAD CV
         </a>
         <a
           href="https://github.com/MaiconKevyn"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center px-6 py-2.5 rounded text-sm font-bold transition-all hover:bg-cyan-400"
+          className="inline-flex items-center justify-center px-6 py-2.5 rounded text-sm font-bold transition-all"
           style={{
-            background: '#06b6d4',
-            color: '#000',
+            background: 'rgba(255,255,255,0.04)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            color: '#fff',
             fontFamily: 'JetBrains Mono, monospace',
             letterSpacing: '0.05em',
           }}

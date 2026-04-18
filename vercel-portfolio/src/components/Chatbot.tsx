@@ -9,10 +9,10 @@ interface Message {
 }
 
 const SUGGESTIONS = [
-  'Why hire Maicon?',
-  'Tell me about TXT2SQL for DATASUS',
+  'Where does he work?',
+  'Tell me about his RAG work',
   'What stack does he use?',
-  'What is his background?'
+  'How can I contact him?'
 ];
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -21,34 +21,38 @@ function fallbackResponse(userMessage: string) {
   const query = userMessage.toLowerCase();
 
   if (query.includes('hire') || query.includes('why')) {
-    return 'Maicon combines **LLM orchestration, retrieval, APIs, and data workflows** in one profile. His strongest signal is shipping systems like healthcare TXT2SQL, AWS extraction pipelines, and evaluation-first research agents instead of isolated demos.';
+    return 'Maicon combines **real AI delivery experience at ADP**, **AI research at PUCRS**, and a strong data foundation from **UFRGS**. His strongest signal is shipping RAG, document extraction, evaluation workflows, and applied ML systems instead of isolated demos.';
   }
 
   if (query.includes('datasus') || query.includes('txt2sql') || query.includes('healthcare')) {
-    return 'The DATASUS project is a **Portuguese NL2SQL agent** over roughly **37M Brazilian hospital records**. It uses LangGraph, validation, and repair loops, and reports **96.3% execution accuracy** in controlled evaluation.';
+    return 'The DATASUS project is a **LangGraph-based Portuguese NL2SQL system** over **11M+ SUS health records**. It uses PostgreSQL, validation and retry logic, and a schema covering **15+ tables** to keep healthcare answers inspectable.';
+  }
+
+  if (query.includes('work') || query.includes('experience') || query.includes('adp') || query.includes('pucrs')) {
+    return 'Maicon currently works as **Data Scientist | AI Engineer at ADP** and is also a **Data Science Researcher in AI at PUCRS**. His work spans RAG, structured extraction, evaluation workflows, and production cloud delivery.';
   }
 
   if (query.includes('stack') || query.includes('tools') || query.includes('tech')) {
-    return 'Core tools include **LangGraph, OpenAI API, DuckDB, FastAPI, PostgreSQL, pgvector, AWS, Step Functions, and Streamlit**. The profile is strongest where AI engineering meets analytical backends and deployable product surfaces.';
+    return 'Core tools include **LangGraph, OpenAI API, Databricks, MLflow, PostgreSQL, pgvector, AWS, Textract, Lambda, Step Functions, SageMaker, OpenSearch, and Streamlit**. The profile is strongest where AI engineering meets deployable cloud systems and analytical backends.';
   }
 
-  if (query.includes('background') || query.includes('who') || query.includes('astro')) {
-    return 'Maicon is a Brazilian data professional with a background in **Data Science and Astrophysics at UFRGS**. His work focuses on **AI Engineer / Data Scientist** roles with evaluation-minded systems, retrieval, and healthcare analytics.';
+  if (query.includes('background') || query.includes('who') || query.includes('astro') || query.includes('education')) {
+    return 'Maicon is a Brazilian **AI Engineer / GenAI Engineer** with a background in **Astrophysics at UFRGS**, **Data Science**, and AI research at **PUCRS**. That combination shows up in his work through statistical rigor, systems thinking, and practical AI delivery.';
   }
 
   if (query.includes('aws') || query.includes('extractor') || query.includes('document')) {
-    return 'The AWS Universal Extractor is a **serverless structured-extraction pipeline** using **S3, Lambda, Step Functions, and structured outputs**. It is designed to keep each stage inspectable rather than hiding the workflow behind one opaque prompt.';
+    return 'The AWS Universal Extractor is a **serverless structured-extraction pipeline** using **Textract, PyMuPDF, docling, S3, Lambda, Step Functions, API Gateway, and DynamoDB**. It is designed to keep parsing, orchestration, validation, and persistence inspectable.';
   }
 
   if (query.includes('research') || query.includes('agentic')) {
     return 'The research agent combines **FastAPI, React, LangGraph, PostgreSQL, and pgvector** with explicit schemas for classification, planning, synthesis, and evaluation. The focus is grounded answers and observable behavior.';
   }
 
-  if (query.includes('contact') || query.includes('linkedin') || query.includes('reach')) {
-    return 'The best ways to reach Maicon today are **LinkedIn** and **GitHub**. The portfolio contact section also links to **Kaggle** and **LeetCode**.';
+  if (query.includes('contact') || query.includes('linkedin') || query.includes('reach') || query.includes('email') || query.includes('cv')) {
+    return 'The fastest ways to reach Maicon are **LinkedIn** and **email at osonodenewton@gmail.com**. You can also download his CV directly from the portfolio.';
   }
 
-  return 'I can answer about **Maicon\'s background, AI stack, DATASUS TXT2SQL, AWS extraction workflows, research-agent architecture, and contact links**. Try one of the suggestions above.';
+  return 'I can answer about **Maicon\'s experience at ADP and PUCRS, his AI stack, RAG work, healthcare TXT2SQL, AWS extraction workflows, and contact links**. Try one of the suggestions above.';
 }
 
 async function generateResponse(userMessage: string) {
@@ -72,14 +76,16 @@ async function generateResponse(userMessage: string) {
                   text: `You are an AI assistant for Maicon Kevyn's portfolio.
 
 Facts you may use:
-- Maicon Kevyn is a Brazilian AI Engineer / Data Scientist with a background in Data Science and Astrophysics at UFRGS.
-- Core strengths: LLM orchestration, RAG pipelines, structured outputs, retrieval systems, API delivery, analytical backends.
+- Maicon Kevyn is a Brazilian AI Engineer / GenAI Engineer with experience across ADP, PUCRS, and UFRGS.
+- Current roles: Data Scientist | AI Engineer at ADP and Data Science Researcher in Artificial Intelligence at PUCRS.
+- Core strengths: LLM orchestration, RAG pipelines, evaluation workflows, structured outputs, retrieval systems, AWS delivery, Databricks, and analytical backends.
 - Featured projects:
-  1. TXT2SQL for DATASUS: Portuguese NL2SQL over roughly 37M hospital records, LangGraph-based, 96.3% execution accuracy reported in controlled evaluation.
-  2. AWS Universal Extractor: async serverless PDF extraction pipeline with S3, Lambda, Step Functions, YAML extraction profiles, and structured outputs.
+  1. TXT2SQL for DATASUS: LangGraph-based Portuguese NL2SQL over 11M+ SUS health records with a PostgreSQL schema covering 15+ tables.
+  2. AWS Universal Extractor: async serverless PDF extraction pipeline using Textract, PyMuPDF, docling, S3, Lambda, Step Functions, API Gateway, and DynamoDB.
   3. Research Agent with Continuous Evaluation: FastAPI + React + LangGraph + PostgreSQL + pgvector with schemas, retrieval, and execution traces.
-  4. Amazon Feedback Analysis: GPT-4o sentiment, DeBERTa zero-shot topic detection, Streamlit dashboard.
-- Main contact channels: LinkedIn, GitHub, Kaggle, LeetCode.
+  4. Amazon Feedback Analysis: GPT-4o sentiment, DeBERTa topic analysis, clustering, UMAP, and a Streamlit dashboard.
+- Professional highlights: built RAG for 500+ documents, reached 92% retrieval precision, reduced response time by 60%, implemented MLflow LLM-as-a-Judge.
+- Main contact channels: LinkedIn, GitHub, email, and CV download.
 
 Instructions:
 - Be concise, warm, and factual.
@@ -109,7 +115,7 @@ export default function Chatbot() {
     {
       role: 'assistant',
       content:
-        "Hi. I'm **Maicon's portfolio assistant**. Ask about his AI projects, stack, background, or where to contact him."
+        "Hi. I'm **Maicon's portfolio assistant**. Ask about his experience, AI stack, RAG work, background, or how to contact him."
     }
   ]);
   const [input, setInput] = useState('');

@@ -4,7 +4,6 @@ const navItems = [
   { label: 'HOME', href: '#home' },
   { label: 'EXPERIENCE', href: '#experience' },
   { label: 'PROJECTS', href: '#projects' },
-  { label: 'AWARDS', href: '#awards' },
   { label: 'STACK', href: '#skills' },
   { label: 'CONTACT', href: '#contact' },
 ];
@@ -46,7 +45,7 @@ export default function Navigation() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    const sections = ['home', 'experience', 'projects', 'awards', 'skills', 'contact'];
+    const sections = ['home', 'experience', 'projects', 'skills', 'contact'];
     sections.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
