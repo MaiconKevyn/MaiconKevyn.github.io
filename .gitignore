@@ -1,3 +1,7 @@
 .DS_Store
 .codex
 .idea/
+.vercel
+.next/
+node_modules/
+dist/
