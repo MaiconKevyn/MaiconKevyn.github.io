@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Research Agent with Continuous Evaluation</title>
+  <desc id="desc">Agentic research project card for Maicon Kevyn portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04160f"/>
+      <stop offset="60%" stop-color="#0a2d1e"/>
+      <stop offset="100%" stop-color="#03110c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#86efac" fill="none">
+    <path d="M760 180c80-80 220-80 300 0s80 220 0 300-220 80-300 0-80-220 0-300Z"/>
+    <path d="M810 230c52-52 145-52 197 0 53 53 53 145 0 198-52 52-145 52-197 0-53-53-53-145 0-198Z"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#eafff7">
+    <text x="90" y="120" font-size="34" letter-spacing="8" fill="#86efac">AGENTIC RESEARCH</text>
+    <text x="90" y="220" font-size="82" font-weight="700">RESEARCH AGENT</text>
+    <text x="90" y="305" font-size="82" font-weight="700">WITH EVALUATION</text>
+    <text x="90" y="390" font-size="34" fill="#c6f6e6">Schemas, retrieval, execution traces, and grounded synthesis</text>
+  </g>
+  <g transform="translate(90 460)" font-family="JetBrains Mono, monospace">
+    <rect width="470" height="190" rx="24" fill="rgba(7,20,16,0.76)" stroke="#10b981"/>
+    <text x="36" y="58" font-size="28" fill="#a7f3d0">FastAPI + React + LangGraph</text>
+    <text x="36" y="104" font-size="24" fill="#ecfdf5">PostgreSQL + pgvector</text>
+    <text x="36" y="146" font-size="24" fill="#ecfdf5">planning → synthesis → evaluation</text>
+  </g>
+  <g transform="translate(690 470)" font-family="JetBrains Mono, monospace">
+    <rect width="360" height="150" rx="24" fill="rgba(6,22,24,0.72)" stroke="#06b6d4"/>
+    <text x="36" y="60" font-size="34" fill="#67e8f9">pgvector</text>
+    <text x="36" y="108" font-size="24" fill="#d7fffb">grounded retrieval</text>
+  </g>
+  <path d="M90 680h1020" stroke="url(#accent)" stroke-width="4"/>
+</svg>

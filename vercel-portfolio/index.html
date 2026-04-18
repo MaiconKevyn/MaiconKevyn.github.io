@@ -1,331 +1,66 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Maicon Kevyn | AI Engineer & Data Scientist</title>
-    <meta
-      name="description"
-      content="Vercel portfolio for Maicon Kevyn focused on LLM orchestration, RAG pipelines, healthcare analytics, and production-minded AI systems."
-    />
-    <meta name="theme-color" content="#050816" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Maicon Kevyn | AI Engineer & Data Scientist" />
-    <meta
-      property="og:description"
-      content="AI Engineer and Data Scientist portfolio with agentic systems, retrieval pipelines, evaluation-first workflows, and deployable data products."
-    />
-    <meta property="og:url" content="https://maiconkevyn.vercel.app/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    <div class="page-grid" aria-hidden="true"></div>
-    <div class="noise-layer" aria-hidden="true"></div>
-    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAICONKEVYN.AI | AI Engineer & Data Scientist</title>
 
-    <header class="site-header">
-      <nav class="nav shell">
-        <a class="brand" href="#top" aria-label="Back to top">
-          <span class="brand-mark">MK</span>
-          <span class="brand-copy">
-            <strong>Maicon Kevyn</strong>
-            <span>AI Engineer / Data Scientist</span>
-          </span>
-        </a>
+  <!-- Performance Optimizations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
-        <div class="nav-links">
-          <a href="#focus">Focus</a>
-          <a href="#systems">Systems</a>
-          <a href="#stack">Stack</a>
-          <a href="#contact">Contact</a>
-        </div>
+  <!-- Preload Critical LCP image -->
+  <link rel="preload" as="image" href="/profile.png" fetchpriority="high">
 
-        <a class="nav-cta" href="https://github.com/MaiconKevyn" target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-      </nav>
-    </header>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    <main id="top">
-      <section class="hero shell">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">AI ENGINEER / DATA SCIENTIST</p>
-          <h1>
-            Designing AI systems that connect
-            <span>LLM orchestration, retrieval, analytics, and real delivery.</span>
-          </h1>
-          <p class="hero-text">
-            I build production-minded AI products with a bias for measurable
-            behavior, inspectable pipelines, and interfaces people can actually use.
-            My strongest work sits at the intersection of agentic systems, healthcare
-            data, cloud workflows, and analytical backend engineering.
-          </p>
+  <meta name="description" content="Portfolio of Maicon Kevyn, an AI Engineer and Data Scientist specializing in LLM orchestration, RAG pipelines, and production-grade AI systems.">
+  <link rel="canonical" href="https://maiconkevyn.vercel.app/" />
 
-          <div class="typed-panel">
-            <span class="typed-prefix">Specializing in</span>
-            <span class="typed-text" id="typed-text">LLM orchestration, tool routing, and structured outputs.</span>
-            <span class="typed-caret" aria-hidden="true"></span>
-          </div>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maiconkevyn.vercel.app/">
+  <meta property="og:title" content="MAICONKEVYN.AI | AI Engineer & Data Scientist">
+  <meta property="og:description" content="Portfolio of Maicon Kevyn, an AI Engineer and Data Scientist specializing in LLM orchestration, RAG pipelines, and production-grade AI systems.">
 
-          <div class="hero-actions">
-            <a class="button button-primary" href="#systems">Explore Systems</a>
-            <a
-              class="button button-secondary"
-              href="https://www.linkedin.com/in/maiconkevyn/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
-          </div>
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://maiconkevyn.vercel.app/">
+  <meta property="twitter:title" content="MAICONKEVYN.AI | AI Engineer & Data Scientist">
+  <meta property="twitter:description" content="Portfolio of Maicon Kevyn, an AI Engineer and Data Scientist.">
 
-          <div class="metrics-grid">
-            <article class="metric-card">
-              <span class="metric-value">37M+</span>
-              <span class="metric-label">Brazilian healthcare records queried in AI workflows</span>
-            </article>
-            <article class="metric-card">
-              <span class="metric-value">96.3%</span>
-              <span class="metric-label">reported execution accuracy in healthcare TXT2SQL evaluation</span>
-            </article>
-            <article class="metric-card">
-              <span class="metric-value">AWS</span>
-              <span class="metric-label">document pipelines using S3, Lambda, and Step Functions</span>
-            </article>
-            <article class="metric-card">
-              <span class="metric-value">API + UI</span>
-              <span class="metric-label">systems delivered as services, dashboards, and usable products</span>
-            </article>
-          </div>
-        </div>
-
-        <div class="hero-visual reveal">
-          <div class="orbital-stage" id="orbital-stage">
-            <div class="orbital-halo" aria-hidden="true"></div>
-            <div class="orbital-ring orbital-ring-one" aria-hidden="true"></div>
-            <div class="orbital-ring orbital-ring-two" aria-hidden="true"></div>
-            <div class="orbital-ring orbital-ring-three" aria-hidden="true"></div>
-
-            <div class="sphere-shell" aria-hidden="true">
-              <div class="sphere-core"></div>
-              <div class="sphere-flare sphere-flare-one"></div>
-              <div class="sphere-flare sphere-flare-two"></div>
-              <div class="sphere-flare sphere-flare-three"></div>
-              <div class="sphere-grid"></div>
-              <div class="sphere-pulse"></div>
-            </div>
-
-            <article class="signal-card signal-card-top">
-              <p class="signal-kicker">SYSTEM MODE</p>
-              <strong>Evaluation-First</strong>
-              <span>Guardrails, structured outputs, retry logic, and inspectable traces.</span>
-            </article>
-
-            <article class="signal-card signal-card-left">
-              <p class="signal-kicker">SEARCH LAYER</p>
-              <strong>RAG + Retrieval</strong>
-              <span>Vector search, grounding, document extraction, and evidence handling.</span>
-            </article>
-
-            <article class="signal-card signal-card-right">
-              <p class="signal-kicker">DELIVERY PATH</p>
-              <strong>Cloud + APIs</strong>
-              <span>FastAPI, AWS orchestration, serverless flows, and interactive UIs.</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="signal-strip shell reveal" aria-label="Technology focus">
-        <span>LangGraph</span>
-        <span>OpenAI API</span>
-        <span>RAG Pipelines</span>
-        <span>DuckDB</span>
-        <span>pgvector</span>
-        <span>FastAPI</span>
-        <span>AWS</span>
-        <span>Structured Outputs</span>
-      </section>
-
-      <section class="section shell" id="focus">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Core Focus</p>
-          <h2>What I optimize for when building AI systems</h2>
-          <p>
-            The goal is not just model demos. I care about grounded outputs,
-            deployable interfaces, traceable system behavior, and architectures
-            that survive real usage.
-          </p>
-        </div>
-
-        <div class="focus-grid">
-          <article class="focus-card reveal">
-            <span class="focus-index">01</span>
-            <h3>LLM Orchestration</h3>
-            <p>
-              Multi-step agents with routing, validation, repair loops, and clear
-              decision boundaries instead of prompt-only control.
-            </p>
-          </article>
-
-          <article class="focus-card reveal">
-            <span class="focus-index">02</span>
-            <h3>Retrieval & Document Intelligence</h3>
-            <p>
-              RAG pipelines, searchable knowledge layers, PDF extraction, and
-              evidence-aware systems for grounded outputs.
-            </p>
-          </article>
-
-          <article class="focus-card reveal">
-            <span class="focus-index">03</span>
-            <h3>Data Products</h3>
-            <p>
-              APIs, dashboards, analytical surfaces, and domain workflows that
-              connect models to useful operational outcomes.
-            </p>
-          </article>
-
-          <article class="focus-card reveal">
-            <span class="focus-index">04</span>
-            <h3>Cloud Delivery</h3>
-            <p>
-              AWS-oriented pipelines with explicit processing stages, storage,
-              indexing, and service boundaries that remain inspectable.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section shell" id="systems">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Selected Systems</p>
-          <h2>Featured work for AI Engineer and Data Scientist roles</h2>
-          <p>
-            The strongest signal comes from systems that combine models, data,
-            backend logic, and real interfaces instead of isolated notebooks.
-          </p>
-        </div>
-
-        <div class="systems-layout">
-          <div class="systems-list reveal" id="project-list" role="tablist" aria-label="Featured projects"></div>
-          <article class="system-panel reveal" id="system-panel" aria-live="polite" role="tabpanel"></article>
-        </div>
-      </section>
-
-      <section class="section shell" id="stack">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Execution Layer</p>
-          <h2>Stack, principles, and delivery habits</h2>
-          <p>
-            My portfolio is strongest where AI engineering, data engineering,
-            backend delivery, and domain reasoning overlap.
-          </p>
-        </div>
-
-        <div class="stack-layout">
-          <article class="stack-panel reveal">
-            <h3>Tooling & Platforms</h3>
-            <div class="chip-cloud">
-              <span>LangGraph</span>
-              <span>OpenAI</span>
-              <span>FastAPI</span>
-              <span>Flask</span>
-              <span>Python</span>
-              <span>SQL</span>
-              <span>DuckDB</span>
-              <span>PostgreSQL</span>
-              <span>pgvector</span>
-              <span>AWS</span>
-              <span>Lambda</span>
-              <span>Step Functions</span>
-              <span>OpenSearch</span>
-              <span>React</span>
-              <span>Streamlit</span>
-            </div>
-          </article>
-
-          <div class="principles-grid">
-            <article class="principle-card reveal">
-              <h3>Grounded Responses</h3>
-              <p>
-                Retrieval, schema guidance, and explicit evidence handling over
-                vague generation-only flows.
-              </p>
-            </article>
-
-            <article class="principle-card reveal">
-              <h3>Observable Behavior</h3>
-              <p>
-                Structured outputs, stage boundaries, and logs that make the
-                system easier to debug and improve.
-              </p>
-            </article>
-
-            <article class="principle-card reveal">
-              <h3>Usable Interfaces</h3>
-              <p>
-                Services and frontends that expose AI capability in ways hiring
-                managers and real users can immediately understand.
-              </p>
-            </article>
-
-            <article class="principle-card reveal">
-              <h3>Practical Delivery</h3>
-              <p>
-                Systems designed with deployment, repeatability, and integration
-                concerns in mind from the start.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section shell" id="contact">
-        <div class="contact-panel reveal">
-          <div class="contact-copy">
-            <p class="section-kicker">Open To Work</p>
-            <h2>Interested in AI engineering, applied data science, and GenAI product work</h2>
-            <p>
-              If you need someone who can move between models, backend logic,
-              data workflows, and product-facing execution, the best starting
-              point is the project portfolio and linked profiles below.
-            </p>
-          </div>
-
-          <div class="contact-links">
-            <a href="https://github.com/MaiconKevyn" target="_blank" rel="noreferrer">
-              <span>GitHub</span>
-              <strong>github.com/MaiconKevyn</strong>
-            </a>
-            <a href="https://www.linkedin.com/in/maiconkevyn/" target="_blank" rel="noreferrer">
-              <span>LinkedIn</span>
-              <strong>linkedin.com/in/maiconkevyn</strong>
-            </a>
-            <a href="https://www.kaggle.com/kevynmaicon" target="_blank" rel="noreferrer">
-              <span>Kaggle</span>
-              <strong>kaggle.com/kevynmaicon</strong>
-            </a>
-            <a href="https://leetcode.com/u/maiconkevyn/" target="_blank" rel="noreferrer">
-              <span>LeetCode</span>
-              <strong>leetcode.com/u/maiconkevyn</strong>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer shell">
-      <p>Designed for a separate Vercel deployment while keeping GitHub Pages at the repository root.</p>
-      <p>&copy; <span id="current-year"></span> Maicon Kevyn</p>
-    </footer>
-  </body>
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Maicon Kevyn",
+      "url": "https://maiconkevyn.vercel.app/",
+      "jobTitle": "AI Engineer",
+      "description": "Portfolio of Maicon Kevyn, an AI Engineer and Data Scientist specializing in LLM orchestration, RAG pipelines, and production-grade AI systems.",
+      "sameAs": [
+        "https://github.com/MaiconKevyn",
+        "https://www.linkedin.com/in/maiconkevyn/"
+      ]
+    }
+  </script>
+</head>
+<body>
+  <div id="root">
+    <div style="min-height: 100vh; background-color: #050505; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Inter', sans-serif;">
+      <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem; color: #06b6d4; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.2rem">
+        MAICONKEVYN<span style="color: white">.AI</span>
+      </h1>
+      <h2 style="font-size: 1rem; color: #a855f7; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1rem; animation: pulse 1s infinite alternate; font-weight: normal">SYSTEM INITIALIZING...</h2>
+    </div>
+  </div>
+  <style>
+    @keyframes pulse {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+  </style>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
 </html>

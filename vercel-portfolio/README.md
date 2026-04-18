@@ -1,23 +1,45 @@
-# Vercel Portfolio
+# MAICONKEVYN.AI | Vercel Portfolio
 
-Este diretório contém um segundo portfólio, separado do GitHub Pages que continua na raiz do repositório.
+An immersive portfolio for **Maicon Kevyn**, focused on **AI Engineering**, **Data Science**, and **production-minded LLM systems**. The app keeps the strongest structural ideas from the original reference portfolio while adapting the content, projects, branding, and contacts to Maicon's work.
 
-## Como publicar no Vercel
+## Key Highlights
 
-1. Importe o repositório `MaiconKevyn/MaiconKevyn.github.io` no Vercel.
-2. Em `Project Settings`, configure `Root Directory` como `vercel-portfolio`.
-3. Use `Framework Preset: Other`.
-4. Como o site é estático, o Vercel pode publicar os arquivos deste diretório sem build complexo.
+- Production-focused showcase built around real AI engineering projects.
+- Three.js profile sphere, Framer Motion interactions, and gradient-heavy hero treatment.
+- Horizontal featured-project rail inspired by the original reference portfolio.
+- Optional AI chatbot with local fallback answers and optional Gemini enhancement.
+- Vite + React + TypeScript + Tailwind stack, ready for Vercel deployment.
 
-## Estrutura
+## Featured Projects
 
-- `index.html`: markup principal
-- `styles.css`: layout, animações, responsividade e o visual do hero
-- `script.js`: typewriter, troca de projetos, progress bar e microinterações
-- `vercel.json`: ajustes simples de entrega
+- `agent-txt2sql-langgraph`
+- `aws-universal-extractor`
+- `agentic-research-pipeline`
+- `amazon-feedback-analysis`
 
-## Convivência com o GitHub Pages
+## Stack
 
-- O portfólio do GitHub Pages permanece na raiz do repositório.
-- O portfólio do Vercel fica isolado aqui.
-- Os dois podem coexistir no mesmo `main`, cada um apontando para um diretório diferente.
+| Category | Technologies |
+| :--- | :--- |
+| Core | React 18, Vite, TypeScript |
+| Visuals | Three.js, Framer Motion |
+| Styling | Tailwind CSS, Lucide React |
+| Data Viz | Recharts |
+| Deployment | Vercel + Speed Insights |
+
+## Development
+
+1. Install dependencies
+   ```bash
+   npm install
+   ```
+
+2. Run locally
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production
+   ```bash
+   npm run build
+   ```

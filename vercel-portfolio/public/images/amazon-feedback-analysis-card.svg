@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Amazon Feedback Analysis</title>
+  <desc id="desc">Applied NLP project card for Maicon Kevyn portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b1105"/>
+      <stop offset="60%" stop-color="#2d1608"/>
+      <stop offset="100%" stop-color="#081823"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g opacity="0.16">
+    <circle cx="910" cy="230" r="170" fill="none" stroke="#fdba74"/>
+    <circle cx="910" cy="230" r="120" fill="none" stroke="#67e8f9"/>
+    <circle cx="910" cy="230" r="70" fill="none" stroke="#fdba74"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#fff7ed">
+    <text x="90" y="120" font-size="34" letter-spacing="8" fill="#fdba74">APPLIED NLP</text>
+    <text x="90" y="220" font-size="84" font-weight="700">AMAZON FEEDBACK</text>
+    <text x="90" y="305" font-size="84" font-weight="700">ANALYSIS</text>
+    <text x="90" y="390" font-size="34" fill="#fee2c1">Zero-shot sentiment + topic discovery + dashboard exploration</text>
+  </g>
+  <g transform="translate(90 470)" font-family="JetBrains Mono, monospace">
+    <rect width="440" height="170" rx="24" fill="rgba(29,17,7,0.76)" stroke="#f97316"/>
+    <text x="36" y="58" font-size="30" fill="#fdba74">GPT-4o + DeBERTa</text>
+    <text x="36" y="104" font-size="24" fill="#fff7ed">sentiment + zero-shot topic labels</text>
+    <text x="36" y="144" font-size="24" fill="#fff7ed">Streamlit insight dashboard</text>
+  </g>
+  <g transform="translate(670 470)" font-family="JetBrains Mono, monospace">
+    <rect width="410" height="160" rx="24" fill="rgba(5,18,24,0.72)" stroke="#06b6d4"/>
+    <text x="36" y="62" font-size="32" fill="#67e8f9">ZERO-SHOT</text>
+    <text x="36" y="112" font-size="24" fill="#ecfeff">sentiment + topics</text>
+  </g>
+  <path d="M90 680h1020" stroke="url(#accent)" stroke-width="4"/>
+</svg>

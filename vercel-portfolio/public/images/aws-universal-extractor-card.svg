@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">AWS Universal Extractor</title>
+  <desc id="desc">Document intelligence project card for Maicon Kevyn portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14061f"/>
+      <stop offset="55%" stop-color="#220d38"/>
+      <stop offset="100%" stop-color="#13081f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#d8b4fe">
+    <rect x="780" y="120" width="230" height="300" rx="28" fill="none"/>
+    <rect x="740" y="170" width="230" height="300" rx="28" fill="none"/>
+    <rect x="700" y="220" width="230" height="300" rx="28" fill="none"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#f5e9ff">
+    <text x="90" y="120" font-size="34" letter-spacing="8" fill="#d8b4fe">DOCUMENT INTELLIGENCE</text>
+    <text x="90" y="220" font-size="84" font-weight="700">AWS UNIVERSAL</text>
+    <text x="90" y="305" font-size="84" font-weight="700">EXTRACTOR</text>
+    <text x="90" y="390" font-size="34" fill="#ddc4ff">Structured PDF extraction with async AWS orchestration</text>
+  </g>
+  <g transform="translate(90 455)" font-family="JetBrains Mono, monospace">
+    <rect width="460" height="180" rx="24" fill="rgba(16,8,26,0.72)" stroke="#a855f7"/>
+    <text x="36" y="58" font-size="30" fill="#e9d5ff">S3  →  Lambda  →  Step Functions</text>
+    <text x="36" y="104" font-size="24" fill="#f5e9ff">profiles.yaml + structured outputs</text>
+    <text x="36" y="146" font-size="24" fill="#f5e9ff">validation + persistence by request id</text>
+  </g>
+  <g transform="translate(670 470)">
+    <rect width="430" height="150" rx="24" fill="rgba(32,12,40,0.62)" stroke="#ec4899"/>
+    <text x="38" y="62" font-family="JetBrains Mono, monospace" font-size="32" fill="#f0abfc">ASYNC AWS</text>
+    <text x="38" y="110" font-family="JetBrains Mono, monospace" font-size="24" fill="#f5e9ff">Inspectable pipeline stages</text>
+  </g>
+  <path d="M90 675h1020" stroke="url(#accent)" stroke-width="4"/>
+</svg>
