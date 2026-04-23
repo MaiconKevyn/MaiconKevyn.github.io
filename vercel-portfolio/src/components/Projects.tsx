@@ -64,6 +64,23 @@ const projects: Project[] = [
     image: '/images/aws-universal-extractor-card.svg',
   },
   {
+    title: 'DocTune Fine-tuned Extractor',
+    tagline: 'QLoRA document extraction for noisy payroll data',
+    description: 'Fine-tuning pipeline that adapts Qwen2.5-1.5B with QLoRA to extract structured payroll fields from noisy OCR text, backed by synthetic data generation, held-out benchmarking, and a FastAPI serving path.',
+    achievements: [
+      'Improves average field accuracy from 63.86% to 93.71% on 100 held-out noisy payslips.',
+      'Trains a LoRA adapter on 900 synthetic payroll samples with 5 layouts and OCR-style corruption.',
+      'Serves typed JSON extraction through FastAPI with a reproducible benchmark and model card.',
+    ],
+    whyItMatters: 'Shows fine-tuning discipline beyond prompting: dataset design, adapter training, evaluation, serving, and documented limitations.',
+    tech: ['Qwen2.5', 'QLoRA', 'PEFT', 'BitsAndBytes', 'FastAPI', 'Pydantic'],
+    githubUrl: 'https://github.com/MaiconKevyn/finetuned-document-extractor',
+    gradient: 'from-amber-400 to-rose-500',
+    accent: '#f59e0b',
+    signal: { label: 'Avg field accuracy', display: '93.71%' },
+    image: '/images/doctune-card.svg',
+  },
+  {
     title: 'Research Agent with Continuous Evaluation',
     tagline: 'Four-stage LangGraph pipeline with typed contracts and execution traces',
     description: 'Research agent built on a 4-stage LangGraph pipeline — classify, plan, synthesize, evaluate — backed by Pydantic schemas at every stage, pgvector retrieval, live web search, and full execution traces for inspection and iterative evaluation.',
@@ -251,7 +268,7 @@ export default function Projects() {
           </h2>
           <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400" />
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-400">
-            Four portfolio cases selected to show applied AI delivery, retrieval design, and production-minded engineering.
+            Five portfolio cases selected to show applied AI delivery, fine-tuning, retrieval design, and production-minded engineering.
           </p>
         </motion.div>
 

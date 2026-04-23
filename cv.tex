@@ -1,0 +1,197 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{marvosym}
+\usepackage{fontspec} %for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} %other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{longtable} % for longtable environment
+
+% Use o pacote geometry para controlar as margens
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} %for Grades
+\usepackage{titlesec} %custom \section
+\usepackage{multicol}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+\renewcommand*{\familydefault}{\sfdefault}
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{1pt}{3pt}
+
+\hyphenation{im-pre-se}
+
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.95\paperheight}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\pagestyle{empty} % sem número de páginas
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Maicon Kevyn Moraes
+		}\vspace{0.1cm}\\AI Engineer | GenAI Engineer\\{\color{gray}}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal data}
+
+\begin{tabular}{rl}
+    {Email:}     & osonodenewton@gmail.com \\
+    {LinkedIn:} & \href{https://www.linkedin.com/in/maiconkevyn/}{linkedin.com/in/maiconkevyn/} \\
+    {Portifolio:} &
+    \href{https://maicon-kevyn-portifolio.vercel.app/}{maicon-kevyn-portifolio}  \\
+    {Phone:} & \href{}{+55 51993205204}
+
+\end{tabular}
+
+\section{Education}
+\begin{tabular}{r|p{11cm}}
+ \textbf{ 2021/1 - 2026/1}& \textbf{Bachelor's Degree in Astrophysics, \href{http://www.ufrgs.br/english/home}{Federal University of Rio Grande do Sul – UFRGS} }\\
+
+\textbf{ 2023/1 - Nov/2025}& \textbf{Undergraduate Degree in Data Science, \href{https://www.uninter.com/}{International University Center – UNINTER} }\\
+
+\textbf{2026/1 - 2028/1} & \textbf{Master's Degree in Data Science and Artificial Intelligence, \href{https://www.pucrs.br/}{Pontifical Catholic University of Rio Grande do Sul (PUCRS)}} \\
+
+
+
+ \end{tabular}
+
+\section{Summary}
+AI Engineer with experience building and shipping LLM-based products, retrieval systems, and document extraction pipelines. I work across the practical side of applied AI, from prompts and evaluation to APIs and cloud infrastructure, mainly on AWS and Databricks. Built retrieval systems for 500+ documents with 92\% precision, set up automated evaluation with MLflow LLM-as-a-Judge, and developed serverless pipelines with Lambda, Step Functions, SageMaker, S3, and DynamoDB. I also have a solid background in classical machine learning, including scikit-learn and XGBoost, which helps me move comfortably between traditional ML and modern GenAI work.
+
+\section{Core Skills}
+\textbf{Generative AI:} LLM applications, RAG, vector search, tool calling, prompt engineering, prompt evaluation, LangChain, LangGraph, Ragas, structured extraction workflows \\
+\textbf{Machine Learning:} Scikit-learn, XGBoost, LLM fine-tuning, experiment tracking, model evaluation \\
+\textbf{Backend \& APIs:} Flask, REST APIs, API integration, Pydantic \\
+\textbf{Cloud \& MLOps:} AWS (Lambda, S3, Step Functions, SageMaker, API Gateway, ECR), Docker, Jenkins, Git, Promptfoo \\
+\textbf{Data Platform:} Databricks, PySpark, MLflow, Lakeflow, ETL/ELT pipelines \\
+\textbf{Databases:} PostgreSQL, pgvector, SQLite, DynamoDB, Pinecone \\
+\textbf{Programming:} Python, SQL \\
+\textbf{Visualization:} Databricks Dashboards, Streamlit \\
+\textbf{Languages:} English - Intermediate (B2), Portuguese (Native), Spanish - Elementary (A2)
+
+
+
+\begin{longtable}{p{0.18\textwidth}|p{0.74\textwidth}}
+
+\textbf{Nov/2024 - Present} &
+\textbf{\large Data Scientist | AI Engineer at ADP} \par
+$\bullet$ Built end-to-end RAG pipelines with LLMs, including document parsing with AWS Textract, PyMuPDF, and docling, prompt design, vector indexing, and hybrid search in AWS OpenSearch.\par
+
+\vspace{1.3pt}
+
+
+$\bullet$ Designed structured extraction pipelines for payroll documents using prompt design, tool calling, and schema-based outputs, with AWS Lambda, Step Functions, S3, API Gateway, and DynamoDB supporting orchestration and downstream integrations.\par
+
+
+\vspace{1.3pt}
+
+$\bullet$ Delivered a RAG pipeline on Databricks Vector Search for 500+ employee benefits documents, reaching 92\% retrieval precision and reducing query response time by 60\%.
+
+\vspace{1.3pt}
+
+$\bullet$ Implemented MLflow LLM-as-a-Judge evaluation to automate quality checks and reduce manual review of LLM outputs.\par
+\vspace{1.3pt}
+
+$\bullet$ Improved prompt quality with Promptfoo and PromptFlow, combining automatic metrics with model-based evaluation to compare relevance, quality, and consistency at scale.\par
+
+
+\vspace{1.3pt}
+
+$\bullet$ Fine-tuned LLMs on Databricks with experiment tracking in MLflow, then deployed them on AWS SageMaker with custom Docker images and integrated them with Lambda, S3, and Step Functions.\par
+
+\vspace{1.3pt}
+
+$\bullet$ Optimization of classification pipelines with pandas, scikit-learn, and XGBoost, implementing hyperparameter tuning and preprocessing strategies for performance gains.\par
+
+\vspace{1.3pt}
+
+\\[4pt]
+
+\textbf{Jan/2025 -- Present} &
+\textbf{\large Data Science Researcher in Artificial Intelligence at PUCRS} \par
+$\bullet$ Built a LangGraph-based text-to-SQL agent connected to PostgreSQL to answer natural language questions about data from the Brazilian Unified Health System (SUS), along with a web interface for end users.
+
+$\bullet$ Designed and implemented the PostgreSQL database schema, modeling 15+ tables with proper normalization, indexing strategies, and foreign key constraints to ensure query performance and data integrity for 11M+ health records.\\[2pt]
+
+
+\\[4pt]
+
+\textbf{Feb/2024 -- Nov/2024} &
+\textbf{\large Data Scientist Intern at ADP} \par
+$\bullet$ Benchmarking of LLMs (OpenAI and Hugging Face) applied to sentiment analysis and topic modeling, with implementation of an interactive dashboard to monitor sentiment metrics by topic.\par
+
+$\bullet$ Unsupervised clustering of feedback to uncover recurring themes and audience profiles using LLM-based embeddings and algorithms such as K-Means and HDBSCAN; applied dimensionality reduction for interpretability (UMAP) and validated cluster quality (silhouette/Davies–Bouldin), integrating insights into the sentiment/topic monitoring workflow.
+
+
+\\[4pt]
+
+\textbf{Feb/2022 -- Aug/2022} &
+\textbf{\large Data Engineer Intern at Lojas Renner SA} \par
+$\bullet$ Processing and optimization of large data volumes with PySpark on Azure Databricks, applying the medallion architecture (silver/gold layers) and building pipelines with Azure Data Factory.
+
+$\bullet$ Designed a medallion layer and built end-to-end pipelines in a retail context to deliver optimized, BI-ready tables for analytics teams.
+\\[4pt]
+
+
+\textbf{Aug/2021 -- Jan/2024} &
+\textbf{\large Data Science Researcher at Astronomy Department at UFRGS} \par
+$\bullet$ Python and SQL for extraction, cleaning, and preprocessing of large SDSS astronomical datasets.\par
+$\bullet$ Machine learning models (Random Forest, SVM, Gradient Boosting) for galaxy classification using morphological and photometric features.\par
+$\bullet$ Supervised models to predict galaxy quiescence from stellar parameters (mass, velocity dispersion, spectral indices).
+\\
+
+\end{longtable}
+
+% {\footnotesize
+% \titleformat{\section}{\normalsize\scshape\raggedright}{}{0em}{} % redefine só aqui
+
+% \begin{multicols}{3}
+
+% \section{Languages}
+% Portuguese {\color{gray}(Native)}\\
+% English {\color{gray}(Intermediate - B2)}\\
+% Spanish {\color{gray}(Conversational - A2)}
+% \columnbreak
+
+% \section{Technical skills}
+% Python, SQL, Databricks, Git, AWS
+% % $\bullet$ SQL \\
+% % $\bullet$ Databricks \\
+% % $\bullet$ Git \\
+% \columnbreak
+
+% \section{General skills}
+% Quick learning, Self-Taught, Effective team-working
+
+% \end{multicols}
+
+}
+
+%\newpage
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+
+\end{document}
+

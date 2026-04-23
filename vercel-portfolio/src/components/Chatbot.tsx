@@ -40,6 +40,10 @@ function fallbackResponse(userMessage: string) {
     return 'Maicon is a Brazilian **AI Engineer / GenAI Engineer** with a background in **Astrophysics at UFRGS**, **Data Science**, and AI research at **PUCRS**. That combination shows up in his work through statistical rigor, systems thinking, and practical AI delivery.';
   }
 
+  if (query.includes('doctune') || query.includes('fine-tun') || query.includes('qlora') || query.includes('payroll')) {
+    return 'DocTune fine-tunes **Qwen2.5-1.5B with QLoRA** for structured payroll extraction from noisy OCR text. It improves average field accuracy from **63.86% to 93.71%** on 100 held-out synthetic payslips and serves typed JSON through FastAPI.';
+  }
+
   if (query.includes('aws') || query.includes('extractor') || query.includes('document')) {
     return 'The AWS Universal Extractor is a **serverless structured-extraction pipeline** using **Textract, PyMuPDF, docling, S3, Lambda, Step Functions, API Gateway, and DynamoDB**. It is designed to keep parsing, orchestration, validation, and persistence inspectable.';
   }
@@ -82,8 +86,9 @@ Facts you may use:
 - Featured projects:
   1. TXT2SQL for DATASUS: LangGraph-based Portuguese NL2SQL over 11M+ SUS health records with a PostgreSQL schema covering 15+ tables.
   2. AWS Universal Extractor: async serverless PDF extraction pipeline using Textract, PyMuPDF, docling, S3, Lambda, Step Functions, API Gateway, and DynamoDB.
-  3. Research Agent with Continuous Evaluation: FastAPI + React + LangGraph + PostgreSQL + pgvector with schemas, retrieval, and execution traces.
-  4. Amazon Feedback Analysis: GPT-4o sentiment, DeBERTa topic analysis, clustering, UMAP, and a Streamlit dashboard.
+  3. DocTune Fine-tuned Extractor: Qwen2.5-1.5B QLoRA fine-tuning for noisy payroll extraction, improving average field accuracy from 63.86% to 93.71% on 100 held-out samples.
+  4. Research Agent with Continuous Evaluation: FastAPI + React + LangGraph + PostgreSQL + pgvector with schemas, retrieval, and execution traces.
+  5. Amazon Feedback Analysis: GPT-4o sentiment, DeBERTa topic analysis, clustering, UMAP, and a Streamlit dashboard.
 - Professional highlights: built RAG for 500+ documents, reached 92% retrieval precision, reduced response time by 60%, implemented MLflow LLM-as-a-Judge.
 - Main contact channels: LinkedIn, GitHub, email, and CV download.
 

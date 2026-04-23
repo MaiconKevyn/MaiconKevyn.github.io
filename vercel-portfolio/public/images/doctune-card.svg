@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">DocTune Fine-tuned Extractor</title>
+  <desc id="desc">Fine-tuned document extraction project card for Maicon Kevyn portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c0b05"/>
+      <stop offset="52%" stop-color="#3a1118"/>
+      <stop offset="100%" stop-color="#14080b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g opacity="0.15" stroke="#fbbf24" fill="none">
+    <rect x="735" y="110" width="300" height="390" rx="26"/>
+    <path d="M785 185h200M785 245h150M785 305h220M785 365h170M785 425h210"/>
+    <path d="M690 560c86-80 198-80 284 0 42 40 92 40 150 0"/>
+  </g>
+  <g opacity="0.2" fill="#fb7185">
+    <circle cx="1015" cy="185" r="10"/>
+    <circle cx="1060" cy="245" r="7"/>
+    <circle cx="970" cy="310" r="6"/>
+    <circle cx="1090" cy="395" r="9"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#fff7ed">
+    <text x="90" y="120" font-size="34" letter-spacing="8" fill="#fbbf24">MODEL FINE-TUNING</text>
+    <text x="90" y="220" font-size="86" font-weight="700">DOCTUNE</text>
+    <text x="90" y="305" font-size="78" font-weight="700">DOCUMENT EXTRACTOR</text>
+    <text x="90" y="390" font-size="34" fill="#fed7aa">QLoRA adapter for structured payroll extraction from noisy OCR text</text>
+  </g>
+  <g transform="translate(90 455)" font-family="JetBrains Mono, monospace">
+    <rect width="500" height="185" rx="24" fill="rgba(24,10,8,0.75)" stroke="#f59e0b"/>
+    <text x="36" y="58" font-size="30" fill="#fcd34d">Qwen2.5-1.5B + LoRA</text>
+    <text x="36" y="106" font-size="24" fill="#fff7ed">synthetic payslips + OCR noise</text>
+    <text x="36" y="148" font-size="24" fill="#fff7ed">FastAPI serving + Pydantic JSON</text>
+  </g>
+  <g transform="translate(690 470)" font-family="JetBrains Mono, monospace">
+    <rect width="380" height="150" rx="24" fill="rgba(40,12,16,0.72)" stroke="#f43f5e"/>
+    <text x="36" y="62" font-size="36" fill="#fb7185">93.71%</text>
+    <text x="36" y="110" font-size="24" fill="#ffe4e6">avg field accuracy</text>
+  </g>
+  <path d="M90 680h1020" stroke="url(#accent)" stroke-width="4"/>
+</svg>
