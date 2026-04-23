@@ -88,7 +88,6 @@ Facts you may use:
   2. AWS Universal Extractor: async serverless PDF extraction pipeline using Textract, PyMuPDF, docling, S3, Lambda, Step Functions, API Gateway, and DynamoDB.
   3. DocTune Fine-tuned Extractor: Qwen2.5-1.5B QLoRA fine-tuning for noisy payroll extraction, improving average field accuracy from 63.86% to 93.71% on 100 held-out samples.
   4. Research Agent with Continuous Evaluation: FastAPI + React + LangGraph + PostgreSQL + pgvector with schemas, retrieval, and execution traces.
-  5. Amazon Feedback Analysis: GPT-4o sentiment, DeBERTa topic analysis, clustering, UMAP, and a Streamlit dashboard.
 - Professional highlights: built RAG for 500+ documents, reached 92% retrieval precision, reduced response time by 60%, implemented MLflow LLM-as-a-Judge.
 - Main contact channels: LinkedIn, GitHub, email, and CV download.
 

@@ -97,23 +97,6 @@ const projects: Project[] = [
     signal: { label: 'Classify · Plan · Synth · Eval', display: '4-stage' },
     image: '/images/research-agent-card.svg',
   },
-  {
-    title: 'Applied NLP Benchmarking',
-    tagline: 'Comparative LLM evaluation for sentiment and topic discovery',
-    description: 'Comparative NLP workflow benchmarking OpenAI GPT-4o against Hugging Face DeBERTa zero-shot classification on Amazon reviews, combined with embedding-based clustering to surface coherent topic structures and stakeholder-facing insights.',
-    achievements: [
-      'Benchmarks OpenAI GPT-4o against Hugging Face DeBERTa zero-shot for sentiment and topic classification.',
-      'Uses embeddings with K-Means, HDBSCAN, and UMAP to surface coherent topic clusters.',
-      'Translates benchmark results into actionable insights on product issues impacting user experience.',
-    ],
-    whyItMatters: 'Comparative LLM methodology plus clustering analysis — evaluation discipline applied to applied NLP work.',
-    tech: ['GPT-4o', 'DeBERTa', 'Zero-shot', 'HDBSCAN', 'UMAP', 'Streamlit'],
-    githubUrl: 'https://github.com/MaiconKevyn/amazon-feedback-analysis',
-    gradient: 'from-orange-500 to-cyan-500',
-    accent: '#fb923c',
-    signal: { label: 'OpenAI vs Hugging Face', display: 'Benchmark' },
-    image: '/images/amazon-feedback-analysis-card.svg',
-  },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -268,7 +251,7 @@ export default function Projects() {
           </h2>
           <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400" />
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-400">
-            Five portfolio cases selected to show applied AI delivery, fine-tuning, retrieval design, and production-minded engineering.
+            Four portfolio cases selected to show applied AI delivery, fine-tuning, retrieval design, and production-minded engineering.
           </p>
         </motion.div>
 

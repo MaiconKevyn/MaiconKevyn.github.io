@@ -16,7 +16,6 @@ An immersive portfolio for **Maicon Kevyn**, focused on **AI Engineering**, **Da
 - `aws-universal-extractor`
 - `finetuned-document-extractor`
 - `agentic-research-pipeline`
-- `amazon-feedback-analysis`
 
 ## Stack
 
