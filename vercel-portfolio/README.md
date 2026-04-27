@@ -15,7 +15,7 @@ An immersive portfolio for **Maicon Kevyn**, focused on **AI Engineering**, **Da
 - `agent-txt2sql-langgraph`
 - `aws-universal-extractor`
 - `finetuned-document-extractor`
-- `agentic-research-pipeline`
+- `rag-eval-lab`
 
 ## Stack
 

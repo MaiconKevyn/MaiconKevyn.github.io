@@ -48,8 +48,8 @@ function fallbackResponse(userMessage: string) {
     return 'The AWS Universal Extractor is a **serverless structured-extraction pipeline** using **Textract, PyMuPDF, docling, S3, Lambda, Step Functions, API Gateway, and DynamoDB**. It is designed to keep parsing, orchestration, validation, and persistence inspectable.';
   }
 
-  if (query.includes('research') || query.includes('agentic')) {
-    return 'The research agent combines **FastAPI, React, LangGraph, PostgreSQL, and pgvector** with explicit schemas for classification, planning, synthesis, and evaluation. The focus is grounded answers and observable behavior.';
+  if (query.includes('rag') || query.includes('evaluation') || query.includes('pinecone') || query.includes('retrieval')) {
+    return 'The RAG Evaluation Lab is a **retrieval experimentation platform** with **OpenAI, Pinecone, YAML-based configs, benchmark generation, and cost-aware evaluation**. It generated **1,054 benchmark QA pairs** and ran **4 real RAG configurations** over the same corpus to compare chunking and retrieval trade-offs.';
   }
 
   if (query.includes('contact') || query.includes('linkedin') || query.includes('reach') || query.includes('email') || query.includes('cv')) {
@@ -87,7 +87,7 @@ Facts you may use:
   1. TXT2SQL for DATASUS: LangGraph-based Portuguese NL2SQL over 11M+ SUS health records with a PostgreSQL schema covering 15+ tables.
   2. AWS Universal Extractor: async serverless PDF extraction pipeline using Textract, PyMuPDF, docling, S3, Lambda, Step Functions, API Gateway, and DynamoDB.
   3. DocTune Fine-tuned Extractor: Qwen2.5-1.5B QLoRA fine-tuning for noisy payroll extraction, improving average field accuracy from 63.86% to 93.71% on 100 held-out samples.
-  4. Research Agent with Continuous Evaluation: FastAPI + React + LangGraph + PostgreSQL + pgvector with schemas, retrieval, and execution traces.
+  4. RAG Evaluation Lab: OpenAI + Pinecone experimentation platform with YAML configs, benchmark generation, cost tracking, and comparative RAG evaluation across 4 configurations.
 - Professional highlights: built RAG for 500+ documents, reached 92% retrieval precision, reduced response time by 60%, implemented MLflow LLM-as-a-Judge.
 - Main contact channels: LinkedIn, GitHub, email, and CV download.
 
