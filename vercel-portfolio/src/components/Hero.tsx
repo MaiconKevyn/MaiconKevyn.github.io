@@ -264,8 +264,8 @@ export default function Hero() {
           VIEW EXPERIENCE
         </a>
         <a
-          href="/MaiconKevyn_cv.pdf"
-          download="MaiconKevyn_cv.pdf"
+          href="/MaiconK_CV.pdf"
+          download="MaiconK_CV.pdf"
           className="inline-flex items-center justify-center px-6 py-2.5 rounded text-sm font-bold transition-all hover:bg-cyan-400"
           style={{
             background: '#06b6d4',

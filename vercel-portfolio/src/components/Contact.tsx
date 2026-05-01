@@ -27,7 +27,7 @@ const contactMethods = [
     icon: FileDown,
     label: 'CV',
     value: 'Download PDF',
-    href: '/MaiconKevyn_cv.pdf',
+    href: '/MaiconK_CV.pdf',
     color: 'from-pink-500 to-rose-500',
   },
   {
@@ -118,8 +118,8 @@ export default function Contact() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.a
-              href="/MaiconKevyn_cv.pdf"
-              download="MaiconKevyn_cv.pdf"
+              href="/MaiconK_CV.pdf"
+              download="MaiconK_CV.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-semibold shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70 transition-shadow"
